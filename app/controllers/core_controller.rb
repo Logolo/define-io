@@ -1,0 +1,13 @@
+class CoreController < ApplicationController
+  def index
+    @products = Product.all()
+  end
+  
+  def news
+    @title = "News"
+  end
+  
+  def products
+    @title = "Products"
+  end
+end

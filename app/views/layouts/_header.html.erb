@@ -1,0 +1,65 @@
+<script>
+$(document).ready(function() {
+	var c = Raphael(document.getElementById("companies"));
+	var apple = c.set();
+	apple.push(
+		appleText = c.text(65, 22, "Apple")
+	);
+	var msft = c.set();
+	msft.push(
+		msred = c.rect(106, 11, 8, 8),
+		msred.attr("fill", "red"),
+		msred.attr("stroke", "red"),
+		msgreen = c.rect(118, 11, 8, 8),
+		msgreen.attr("fill", "#00c618"),
+		msgreen.attr("stroke", "#00c618"),
+		msblue = c.rect(106, 23, 8, 8),
+		msblue.attr("fill", "blue"),
+		msblue.attr("stroke", "blue"),
+		msyellow = c.rect(118, 23, 8, 8),
+		msyellow.attr("fill", "#ffd900"),
+		msyellow.attr("stroke", "#ffd900"),
+		mstext = c.text(155, 22, "Microsoft")
+	);
+	$("#sign_in_li").click(function() {
+		$("#sign_in_div").css('visibility', 'visible');
+	});
+});
+</script>
+<div class="row">
+	<div class="span12">
+		<div class="row" id="header">
+			<div class="span3">
+				<div id="logo"><%= link_to 'DEFINE.IO', :index_path %></div>
+			</div>
+			<div class="span6 offset2" id="nav">
+				<div class="navbar">
+					<ul class="nav">
+						<li><a href="/news">NEWS</a></li>
+						<li><a href="#">PRODUCTS</a></li>
+						<li><a href="#">FORUMS</a></li>
+					</ul>
+					<% if user_signed_in? %>
+					<ul class="nav pull-right">
+						<li><a href="#"><%= current_user.name %></a></li>
+						<li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %><li>
+					</ul>
+					<% else %>
+					<ul class="nav pull-right">
+						<li><%= link_to 'REGISTER', :registration_path %></li>
+						<li id="sign_in_li"><%= link_to 'SIGN IN', "#"%></li>
+						<div id="sign_in_div">
+							<%= form_for(:user, :url  => user_session_path) do |f| %>
+							<%= f.text_field :email, :placeholder => "Email", :cols => 10 %>
+							<%= f.password_field :password, :placeholder => "Password" %>
+							<div id="sign_in_button"><%= f.submit "Sign in", :class => "btn btn-primary" %></div>
+							<% end %>
+						</div>
+					<% end %>
+				</div>
+			</div>
+			<div id="companies">
+			</div>
+		</div>
+	</div>
+</div>

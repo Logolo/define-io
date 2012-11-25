@@ -1,0 +1,18 @@
+<div class="row" id="update_blocks">
+	<div class="block">
+		<b>LATEST NEWS</b>
+	</div>
+	<div class="block">
+		<b>LATEST PRODUCTS</b>
+	</div>
+	<div class="block">
+		<b>ACTIVE THREADS</b>
+	</div>
+</div>
+<div class="row">
+	<div class="span6 offset2" id="newest_reviews">
+		<% @products.each do |product| %>
+		<%= product.name %>
+		<% end %>
+	</div>
+</div>
