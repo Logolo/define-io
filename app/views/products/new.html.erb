@@ -1,4 +1,15 @@
-<%= form_for @product do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %>
-<% end %>
+<div class="row">
+  <div class="span6 offset1" id="add_new_product">
+    <h2>ADD NEW PRODUCT</h2>
+    <%= form_for @product do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :release_date %>
+    <%= f.text_field :release_date %>
+    <%= f.label :product_description %>
+    <%= f.text_area :description, :size => "20x20" %>
+    <br />
+    <%= f.submit("Add Product")%>
+    <% end %>
+  </div>
+</div>

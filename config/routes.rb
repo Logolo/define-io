@@ -3,7 +3,9 @@ Define::Application.routes.draw do
   devise_for :users do
     match '/register'=> 'devise/registrations#new', :as => :registration_path
   end
-  resources :products, :only => [:create, :new]
+  resources :products, :only => [:create, :destroy, :index, :new] do
+    match '/products' => 'products#index', :as => :products_path
+  end
   
   match '/admin' => 'core#admin'
   match '/news' => 'core#news', :as => :news_path
