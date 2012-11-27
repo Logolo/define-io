@@ -1,4 +1,13 @@
 module ProductsHelper
+  def calculate_score(product)
+    @product = product
+    reviews = Review.where(:product_id => @product.id)
+    sum = 0
+    reviews.each do |review|
+      sum += review.rating
+    end
+    sum / reviews.count
+  end
   # def score_badge
   # Applies a badge to a given product's listing based on its
   # average score.

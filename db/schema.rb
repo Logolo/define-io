@@ -33,21 +33,28 @@ ActiveRecord::Schema.define(:version => 20121126052003) do
     t.text     "description"
     t.string   "name"
     t.date     "release_date"
+    t.integer  "review_id"
     t.integer  "total_reviews", :default => 0
     t.float    "score",         :default => 0.0
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
   end
 
+  add_index "products", ["review_id"], :name => "index_products_on_review_id"
+
   create_table "reviews", :force => true do |t|
-    t.text     "content"
     t.datetime "posted_on"
-    t.string   "product"
     t.integer  "rating"
-    t.integer  "score"
+    t.integer  "product_id"
+    t.integer  "user_id"
+    t.string   "product"
+    t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "reviews", ["product_id"], :name => "index_reviews_on_product_id"
+  add_index "reviews", ["user_id"], :name => "index_reviews_on_user_id"
 
   create_table "users", :force => true do |t|
     t.boolean  "admin",                  :default => false

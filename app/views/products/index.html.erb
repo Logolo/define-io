@@ -2,8 +2,8 @@
     <div class="span6 offset1">
     <% @products.each do |product| %>
       <div class="product_information">
-        <%= product.name %><br/><%= score_badge(product.score) %>
-        <i>Release Date:</i> <%= product.release_date %>
+        <%= product.name %> | ID: <%= product.id %><br/><%= score_badge(calculate_score(product)) %>
+        <i>Release Date:</i> <%= product.release_date %> <%= product.total_reviews %>
         <br/>
       </div>
     <% end %>
