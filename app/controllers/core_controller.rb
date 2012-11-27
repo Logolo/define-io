@@ -5,6 +5,7 @@ class CoreController < ApplicationController
   
   def news
     @title = "News"
+    @articles = Article.all()
   end
   
   def products

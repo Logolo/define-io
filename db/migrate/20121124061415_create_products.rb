@@ -4,8 +4,8 @@ class CreateProducts < ActiveRecord::Migration
       t.text :description
       t.string :name
       t.date :release_date
-      t.integer :reviews
-      t.float :score
+      t.integer :total_reviews, :default => 0
+      t.float :score, :default => 0
       
       t.timestamps
     end

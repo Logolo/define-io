@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121124061415) do
+ActiveRecord::Schema.define(:version => 20121126052003) do
+
+  create_table "articles", :force => true do |t|
+    t.string   "title"
+    t.string   "slug"
+    t.text     "content"
+    t.datetime "posted_on"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "comments", :force => true do |t|
     t.text     "content"
@@ -24,10 +33,10 @@ ActiveRecord::Schema.define(:version => 20121124061415) do
     t.text     "description"
     t.string   "name"
     t.date     "release_date"
-    t.integer  "reviews"
-    t.float    "score"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "total_reviews", :default => 0
+    t.float    "score",         :default => 0.0
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   create_table "reviews", :force => true do |t|

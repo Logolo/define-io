@@ -1,13 +1,16 @@
 <div class="row">
+    <div class="span6 offset1">
+    <% @products.each do |product| %>
+      <div class="product_information">
+        <%= product.name %><br/><%= score_badge(product.score) %>
+        <i>Release Date:</i> <%= product.release_date %>
+        <br/>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="row">
   <div class="span6 offset1">
-  <% @products.each do |product| %>
-    <div class="product_information">
-      <%= product.name %><br/>
-      <i>Release Date:</i> <%= product.release_date %>
-      <br/>
-    </div>
-  <% end %>
-  <br/>
-</div><br/>
-  <a href="/products/new">Add new product</a>
+    <%= link_to 'Add New Product', new_product_path %>
+  </div>
 </div>

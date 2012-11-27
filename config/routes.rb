@@ -1,15 +1,16 @@
 Define::Application.routes.draw do
 
   devise_for :users do
-    match '/register'=> 'devise/registrations#new', :as => :registration_path
+    match '/register' => 'devise/registrations#new', :as => :registration_path
   end
-  resources :products, :only => [:create, :destroy, :index, :new] do
-    match '/products' => 'products#index', :as => :products_path
-  end
+  resources :articles
+  resources :products, :only => [:create, :destroy, :index, :new]
   
   match '/admin' => 'core#admin'
   match '/news' => 'core#news', :as => :news_path
+  match '/products' => 'products#index', :as => :products_path
   root :to => 'core#index', :as => :index_path
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

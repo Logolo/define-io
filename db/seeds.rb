@@ -5,5 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+# Root user
 User.create(:admin => true, :name => "root", :email => "root@define.io", 
 			:password => "rootpass", :password_confirmation => "rootpass")
+
+# Test product
+Product.create(:description => "Product description", :name => "Test product", :release_date => Time.now())
