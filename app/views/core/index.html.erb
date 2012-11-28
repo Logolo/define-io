@@ -3,7 +3,12 @@
 		<b>LATEST NEWS</b>
 	</div>
 	<div class="block">
-		<b>LATEST PRODUCTS</b>
+		<b>LATEST PRODUCTS</b><br />
+		<div class="latest_products">
+		<% @latest_products.each do |product| %>
+			<%= link_to(product.name, product) %><br />
+		<% end %>
+		</div>
 	</div>
 	<div class="block">
 		<b>ACTIVE THREADS</b>

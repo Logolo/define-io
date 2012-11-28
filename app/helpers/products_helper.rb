@@ -6,7 +6,11 @@ module ProductsHelper
     reviews.each do |review|
       sum += review.rating
     end
-    sum / reviews.count
+    if sum != 0
+      sum / reviews.count
+    else
+      "No Reviews"
+    end
   end
   # def score_badge
   # Applies a badge to a given product's listing based on its

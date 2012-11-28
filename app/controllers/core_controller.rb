@@ -1,6 +1,7 @@
 class CoreController < ApplicationController
   def index
     @products = Product.all()
+    @latest_products = @products.reverse[0,5]
   end
   
   def news

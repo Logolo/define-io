@@ -12,5 +12,6 @@ class CreateProducts < ActiveRecord::Migration
     end
 
     add_index :products, :review_id
+    add_index :products, :slug, :unique => true
   end
 end

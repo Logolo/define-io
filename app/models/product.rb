@@ -1,6 +1,8 @@
 class Product < ActiveRecord::Base
+  extend FriendlyId
   attr_accessible :description, :name, :release_date, :score, :total_reviews
   has_many :reviews, :through => :users, :dependent => :destroy
+  friendly_id :name, use :slugged
 
   def calculate_score(product)
    @product = product

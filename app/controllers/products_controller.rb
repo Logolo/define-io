@@ -17,4 +17,9 @@ class ProductsController < ApplicationController
     @product = Product.new()
     @title = "Add New Product"
   end
+
+  def show
+    @product = Product.find(params[:id])
+    @title = @product.name
+  end
 end
