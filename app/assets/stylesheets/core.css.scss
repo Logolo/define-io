@@ -23,6 +23,17 @@ html, body {
 	width: 245px;
 }
 
+.product {
+	height: 30px;
+	&.even_product {
+		background: #dddddd;
+	}
+	&.odd_product {
+		background: #cccccc;
+	}
+}
+
+
 #companies {
 	background: #dddddd;
 	height: 40px;
