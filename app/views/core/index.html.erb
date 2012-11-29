@@ -26,9 +26,8 @@
 						console.log(gon.products);
 						var loadData = function(time_within) {
 							$("#products").html("<h4>" + gon.products + "</h4>");
-							_.each(products, function(product) {
-
-								//$("#products").html("<h4>" + product + "</h4>");
+							_.each(gon.products, function(product) {
+								$("#products").html("<h4>" + product.name+ "</h4>");
 							});
 						};
 
