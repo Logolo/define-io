@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20121126052003) do
   create_table "products", :force => true do |t|
     t.text     "description"
     t.string   "name"
+    t.string   "slug"
     t.date     "release_date"
     t.integer  "review_id"
     t.integer  "total_reviews", :default => 0
@@ -41,10 +42,12 @@ ActiveRecord::Schema.define(:version => 20121126052003) do
   end
 
   add_index "products", ["review_id"], :name => "index_products_on_review_id"
+  add_index "products", ["slug"], :name => "index_products_on_slug", :unique => true
 
   create_table "reviews", :force => true do |t|
     t.datetime "posted_on"
     t.integer  "rating"
+    t.integer  "votes"
     t.integer  "product_id"
     t.integer  "user_id"
     t.string   "product"

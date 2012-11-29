@@ -24,12 +24,11 @@ html, body {
 }
 
 #companies {
+	background: #dddddd;
 	height: 40px;
 	border-top: 1px solid gray;
 	border-bottom: 1px solid gray;
 	margin-bottom: 15px;
-	margin-top: 50px;
-	margin-bottom: 20px;
 }
 
 #container {
@@ -39,11 +38,12 @@ html, body {
 
 #content {
 	padding-left: 20px;
-	padding-top: 50px;
+	padding-top: 20px;
 	padding-bottom: 100px;
 }
 
 #footer {
+	background: #dddddd;
 	font-size: 14px;
 	height: 20px;
 	position: absolute;
@@ -55,10 +55,11 @@ html, body {
 	}
 }
 
-#header {
-	height: 75px;
+#header-top {
+	background: #cccccc;
+	height: 51px;
 	padding-left: 40px;
-	padding-top: 20px;
+	padding-top: 40px;
 	#logo {
 		padding-right: 20px;
 		width: 260px;
@@ -91,6 +92,15 @@ html, body {
 
 #newest_reviews {
 	
+}
+
+#reviews_within {
+	.active {
+		color: rgb(62, 160, 202);
+	}
+	a {
+		text-decoration: none;
+	}
 }
 
 #sign_in_div {

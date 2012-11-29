@@ -11,5 +11,6 @@ group :assets do
 end
 
 gem 'devise'
+gem 'gon'
 gem 'jquery-rails'
 gem 'friendly_id'

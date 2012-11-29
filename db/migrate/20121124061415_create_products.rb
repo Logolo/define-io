@@ -3,6 +3,7 @@ class CreateProducts < ActiveRecord::Migration
     create_table :products do |t|
       t.text :description
       t.string :name
+      t.string :slug
       t.date :release_date
       t.references :review
       t.integer :total_reviews, :default => 0
