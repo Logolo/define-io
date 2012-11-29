@@ -10,9 +10,9 @@ a failed industry. Often I have come to find various tech sites review a product
 in a manner similar to the following:
 
 "This [Company] notebook has very poor battery life -- approximately three hours
-per full charge, and the trackpad is absolutely horrendous.""
+per full charge, and the trackpad is absolutely horrendous."
 
-"Product score: 8.5"
+**Product score: 8.5**
 
 Things like this make absolutely no sense to me, and based on the criticisms of
 others, I'm not the only one. Tech journalists are unfortunately beneath the
