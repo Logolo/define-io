@@ -30,10 +30,10 @@
 							_.each(gon.products, function(product) {
 								var productId = "\"product" + gon.products.indexOf(product) + "\"";
 								if (gon.products.indexOf(product) % 2 == 0) {
-									$("#products").append("<div class=\"product even_product\" id=\"product\">" + product.name +
+									$("#products").append("<div class=\"product even_product\" id=\"product\">⬆ ⬇ " + product.name +
 										" | " + "Avg. Score: " + product.score + "</div>");
 								} else {
-									$("#products").append("<div class=\"product odd_product\" id=\"product\">" + product.name +
+									$("#products").append("<div class=\"product odd_product\" id=\"product\" > ⬆ ⬇ " + product.name +
 										" | " + "Avg. Score: " + product.score + "</div>");
 								}
 							});

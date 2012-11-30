@@ -6,7 +6,6 @@ class CreateReviews < ActiveRecord::Migration
       t.integer :votes
       t.references :product
       t.references :user
-      t.string :product
       t.text :content
 
       t.timestamps

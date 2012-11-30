@@ -1,13 +1,18 @@
 class ReviewsController < ApplicationController
   def create
     @review = Review.new(params[:review])
-    @product = Product.where(:product_id => @review.product_id)
-    @product.total_reviews += 1
+    @review.posted_on = Time.now()
 
-    respond_to do |format|
-      if @review.save
-        format.html { redirect_to :index_path, :notice => "Review successfully added." }
-      end
+    if @review.save
+        format.html { redirect_to @review, :notice => "Review successfully added." }
     end
+  end
+
+  def new
+    @review = Review.new(:product_id => params[:product_id], :user_id => current_user)
+  end
+
+  def show
+    @review = Review.find(params[:id])
   end
 end

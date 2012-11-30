@@ -1,4 +1,19 @@
 module ProductsHelper
+  # def authorized
+  # Return whether or not the user is an admin, and thus
+  # permitted to add new products.
+  def authorized
+    if user_signed_in? && current_user.admin?
+      true
+    else
+      false
+    end
+  end
+
+  # def calculate_score
+  # argument: product
+  # Calculates the average score for a given product. This
+  # will be expanded in the future to account for weighting.
   def calculate_score(product)
     @product = product
     reviews = Review.where(:product_id => @product.id)
@@ -12,6 +27,7 @@ module ProductsHelper
       "No Reviews"
     end
   end
+
   # def score_badge
   # Applies a badge to a given product's listing based on its
   # average score.

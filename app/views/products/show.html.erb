@@ -1,5 +1,13 @@
 <div class="row">
   <div class="span6 offset1">
-      <h2><%= @product.name %></h2>
+    <h2><%= @product.name %> Reviews</h2>
   </div>
+</div>
+<div>
+    <% @product.reviews.each do |review| %>
+      <%= link_to review.content, review %><br />
+    <% end %>
+  </div>
+<div>
+  <%= link_to 'Review Product', new_review_path(:product_id => @product.id) %>
 </div>

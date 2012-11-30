@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_filter :authorized, :only => [:create, :destroy, :new, :update]
   def create
     @product = Product.new(params[:product])
     respond_to do |format|
@@ -21,5 +22,16 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @title = @product.name
+    #@reviews = Review.all()
+    @reviews = Review.where(:product_id => @product.id)
   end
+
+  protected
+    def authorized
+      if user_signed_in? && current_user.admin?
+        true
+      else
+        redirect_to :index_path
+      end
+    end
 end

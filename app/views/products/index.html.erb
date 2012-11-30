@@ -6,11 +6,13 @@
         <i>Release Date:</i> <%= product.release_date %> <%= product.total_reviews %>
         <br/>
       </div>
-    <% end %>
+    <% end %> 
   </div>
 </div>
 <div class="row">
   <div class="span6 offset1">
-    <%= link_to 'Add New Product', new_product_path %>
+    <% if authorized %>
+      <%= link_to 'Add New Product', new_product_path %>
+    <% end %>
   </div>
 </div>

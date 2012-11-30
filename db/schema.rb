@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(:version => 20121126052003) do
     t.integer  "votes"
     t.integer  "product_id"
     t.integer  "user_id"
-    t.string   "product"
     t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
