@@ -4,7 +4,7 @@ Define::Application.routes.draw do
     match '/register' => 'devise/registrations#new', :as => :registration_path
   end
   resources :products, :only => [:create, :destroy, :index, :new, :show]
-  resources :reviews, :only => [:create, :destroy, :new, :show]
+  resources :reviews, :only => [:create, :destroy, :edit, :new, :show]
   
   match '/admin' => 'core#admin'
   match '/news' => 'core#news', :as => :news_path

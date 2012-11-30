@@ -1,7 +1,7 @@
 <div class="row">
   <div class="span6 offset1">
     ID: <%= @review.attributes %>
-    <%= form_for(@review) do |r| %>
+    <%= form_for @review do |r| %>
     <%= r.label :content %>
     <%= r.text_area :content %>
     <%= r.label :rating %>
