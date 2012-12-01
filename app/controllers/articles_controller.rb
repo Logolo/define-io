@@ -1,15 +1,14 @@
 class ArticlesController < ApplicationController
   def create
     @article = Article.new(params[:article])
-    @article.posted_on = Time.now()
-    respond_to do |format|
-      if @article.save
-        format.html { redirect_to :news_path, :notice => "Article successfully added. " }
-      end
+    if @article.save
+      redirect_to :news_path, :notice => "Article added."
     end
   end
 
   def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
   end
 
   def index

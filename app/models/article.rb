@@ -1,3 +1,3 @@
 class Article < ActiveRecord::Base
-  attr_accessible :content, :posted_on, :slug, :title
+  attr_accessible :content, :slug, :title
 end
