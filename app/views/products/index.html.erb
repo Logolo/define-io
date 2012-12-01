@@ -3,7 +3,7 @@
     <% @products.each do |product| %>
       <div class="product_information">
         <%= link_to product.name, product %> | ID: <%= product.id %><br/><%= score_badge(calculate_score(product)) %>
-        <i>Release Date:</i> <%= product.release_date %> <%= product.total_reviews %>
+        <i>Release Date:</i> <%= product.release_date %> | Total Reviews: <%= product.total_reviews %>
         <br/>
       </div>
     <% end %> 

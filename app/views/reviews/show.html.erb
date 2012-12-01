@@ -1,7 +1,9 @@
 <div class="row">
-  <div class="span6 offset1">
-    <h2><%= @review.content %></h2>
+  <div class="span8 offset1">
+    <h2>Review of <%= @review.product.name %>, by <%= @review.user.name %></h2>
+    <h3><a class="vote_up" href="#">⬆</a> <a class="vote_down" href="#">⬇</a> </h3>
     Product ID: <%= @review.product_id %>
     User ID: <%= @review.user_id %>
+
   </div>
 </div>

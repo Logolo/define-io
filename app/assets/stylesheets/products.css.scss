@@ -2,13 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#add_new_product {
-
-}
-
 .product_information {
   border: 1px solid gray;
   border-radius: 4px;
   margin: 10px;
   padding: 10px;
+}
+
+.review {
+  height: 30px;
+  padding-left: 10px;
+  padding-top: 10px;
+  width: 750px;
+  &.even_review {
+    background: #dddddd;
+  }
+  &.odd_review {
+    background: #cccccc;
+  }
 }

@@ -21,9 +21,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    gon.reviews = @product.reviews
     @title = @product.name
-    #@reviews = Review.all()
-    @reviews = Review.where(:product_id => @product.id)
   end
 
   protected

@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
     @article.posted_on = Time.now()
     respond_to do |format|
       if @article.save
-        format.html { redirect_to articles_path, :notice => "Article successfully added. " }
+        format.html { redirect_to :news_path, :notice => "Article successfully added. " }
       end
     end
   end

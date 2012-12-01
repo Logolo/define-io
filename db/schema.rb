@@ -45,11 +45,11 @@ ActiveRecord::Schema.define(:version => 20121126052003) do
   add_index "products", ["slug"], :name => "index_products_on_slug", :unique => true
 
   create_table "reviews", :force => true do |t|
-    t.datetime "posted_on"
     t.integer  "rating"
     t.integer  "votes"
     t.integer  "product_id"
     t.integer  "user_id"
+    t.string   "title"
     t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

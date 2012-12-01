@@ -1,11 +1,14 @@
 <div class="row">
   <div class="span6 offset1">
-    ID: <%= @review.attributes %>
-    <%= form_for @review do |r| %>
+    Attributes: <%= @review.attributes %>
+    <%= form_for(@review) do |r| %>
+    <%= r.label :title %>
+    <%= r.text_field :title %>
     <%= r.label :content %>
     <%= r.text_area :content %>
     <%= r.label :rating %>
     <%= r.select :rating, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] %><br />
+    <%= r.hidden_field :product_id %>
     <%= r.submit("Post Review") %>
     <% end %>
   </div>

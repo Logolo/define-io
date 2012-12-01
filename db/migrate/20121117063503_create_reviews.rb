@@ -1,11 +1,11 @@
 class CreateReviews < ActiveRecord::Migration
   def change
     create_table :reviews do |t|
-      t.datetime :posted_on
       t.integer :rating
       t.integer :votes
       t.references :product
       t.references :user
+      t.string :title
       t.text :content
 
       t.timestamps
