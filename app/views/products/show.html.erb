@@ -6,10 +6,10 @@ $(document).ready(function() {
     //var reviewId = "\"review" + gon.reviews.indexOf(review) + "\"";
     if (gon.reviews.indexOf(review) % 2 == 0) {
       $("#reviews").append("<div class=\"review even_review\" id=\"review\">⬆ ⬇ " + review.title +
-        " | " + "Rating: " + review.rating + "</div>");
+        " | Rating: " + review.rating + " | Written By: " + review.written_by + "</div>");
     } else {
       $("#reviews").append("<div class=\"review odd_review\" id=\"review\" > ⬆ ⬇ " + review.title +
-        " | " + "Rating: " + review.rating + "</div>");
+        " | Rating: " + review.rating + " | Written By: " + review.written_by + "</div>");
     }
   });
 });

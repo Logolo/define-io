@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    gon.reviews = @product.reviews
+    gon.reviews = @product.reviews.order("rating DESC")
     @title = @product.name
   end
 

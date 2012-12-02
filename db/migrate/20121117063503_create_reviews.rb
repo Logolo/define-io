@@ -6,6 +6,7 @@ class CreateReviews < ActiveRecord::Migration
       t.references :product
       t.references :user
       t.string :title
+      t.string :written_by
       t.text :content
 
       t.timestamps
