@@ -22,5 +22,9 @@ $(document).ready(function() {
 <div id="reviews">
 </div>
 <div>
-  <%= link_to 'Review Product', new_review_path(:product_id => @product.id) %>
+  <% if reviewed?(@product.id) %>
+    <%= link_to 'Edit your review' %>
+  <% else %>
+    <%= link_to 'Review Product', new_product_review_path(@product) %>
+  <% end %>
 </div>

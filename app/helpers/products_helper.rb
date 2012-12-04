@@ -28,6 +28,10 @@ module ProductsHelper
     end
   end
 
+  def reviewed?(product_id)
+    current_user.products_reviewed.include?(product_id)
+  end
+
   # def score_badge
   # Applies a badge to a given product's listing based on its
   # average score.
