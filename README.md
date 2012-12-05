@@ -24,3 +24,7 @@ So what does Define.IO do? The general concept, although it is still currently i
 early stages, is rather simple. Taking the best elements from social news websites
 such as Reddit or similar clones, it seeks to base a product's true score on the
 opinions of the reviews its users submit.
+
+**TODO (12/4/12)**
+* User's name (*written\_by* variable) tied to reviews does not update when the
+  user updates their name. This probably has to do with some JavaScript issues.

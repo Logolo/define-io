@@ -7,8 +7,8 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
-        @product.total_reviews += 1
-        @product.save()
+        @product.add_new_score(@review.rating)
+        @product.save
         current_user.products_reviewed.push(@review.product_id)
         current_user.save()
         format.html { redirect_to @product }
@@ -18,10 +18,7 @@ class ReviewsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    @review = Review.find(params[:id])
-    #if @review.update_attributes(params[:review])
-    #  redirect_to :index_path
-    #end
+    @review = current_user.reviews.find(:first, :conditions => ["product_id = ?", @product.id])
   end
 
   def new
@@ -30,6 +27,13 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @review = Review.find(params[:product_id])
+    @review = Review.find(params[:id])
+  end
+
+  def update
+    @review = current_user.reviews.find(params[:id])
+    if @review.update_attributes!(params[:review])
+      redirect_to :index_path
+    end
   end
 end

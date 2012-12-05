@@ -21,10 +21,11 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @reviews = @product.reviews
     gon.reviews = @product.reviews.order("rating DESC")
     @title = @product.name
     if current_user.products_reviewed.include?(@product)
-      @review = Review.where("product_id = ? AND user_id = ?", @product, current_user.id)
+      @review = current_user.reviews.find(:conditions => ["product_id = ?", @product.id])
     else
       @review = Review.new()
     end

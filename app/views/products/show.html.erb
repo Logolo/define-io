@@ -1,3 +1,4 @@
+<!--
 <script>
 $(document).ready(function() {
   $("#reviews").html("");
@@ -14,16 +15,21 @@ $(document).ready(function() {
   });
 });
 </script>
+-->
 <div class="row">
   <div class="span6 offset1">
     <h2><%= @product.name %> Reviews</h2>
+    <%= @product.attributes %>
   </div>
 </div>
 <div id="reviews">
+  <% @product.reviews.each do |review| %>
+  <%= link_to review.title, ([@product, review]) %><br />
+  <% end %>
 </div>
 <div>
   <% if reviewed?(@product.id) %>
-    <%= link_to 'Edit your review' %>
+    <%= link_to 'Edit your review', edit_product_review_path(:product_id => @product.id) %>
   <% else %>
     <%= link_to 'Review Product', new_product_review_path(@product) %>
   <% end %>

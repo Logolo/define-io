@@ -1,9 +1,10 @@
 <div class="row">
   <div class="span8 offset1">
-    <h2>Review of <%= @review.product.name %>, by <%= @review.user.name %> | Products Reviewed: (<%= @review.user.products_reviewed %>)</h2>
+    <h2><%= @review.title %>, by <%= @review.user.name %> | Products Reviewed: (<%= @review.user.products_reviewed %>)</h2>
     <h3><a class="vote_up" href="#">⬆</a> <a class="vote_down" href="#">⬇</a> </h3>
     Product ID: <%= @review.product_id %>
     User ID: <%= @review.user_id %>
-
+    <%= @review.attributes %>
+    <h3>Score: <%= @review.rating %></h3>
   </div>
 </div>
