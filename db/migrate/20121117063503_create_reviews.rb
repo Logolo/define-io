@@ -1,6 +1,7 @@
 class CreateReviews < ActiveRecord::Migration
   def change
     create_table :reviews do |t|
+      t.integer :old_rating, :default => 0
       t.integer :rating
       t.integer :votes
       t.references :product

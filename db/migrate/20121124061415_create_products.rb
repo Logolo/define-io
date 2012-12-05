@@ -6,6 +6,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :slug
       t.date :release_date
       t.references :review
+      t.integer :score_sum, :default => 0
       t.integer :total_reviews, :default => 0
       t.float :score, :default => 0
       

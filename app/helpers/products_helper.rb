@@ -11,7 +11,7 @@ module ProductsHelper
   end
 
   # def calculate_score
-  # argument: product
+  # Argument: product
   # Calculates the average score for a given product. This
   # will be expanded in the future to account for weighting.
   def calculate_score(product)
@@ -29,7 +29,7 @@ module ProductsHelper
   end
 
   # def reviewed?
-  # argument: product_id
+  # Argument: product_id
   # Returns a boolean based on whether or not the current_user
   # logged in has reviewed a given product.
   def reviewed?(product_id)

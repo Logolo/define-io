@@ -10,7 +10,7 @@ User.create(:admin => true, :name => "root", :email => "root@define.io",
 			:password => "rootpass", :password_confirmation => "rootpass")
 
 # Test products
-#Product.create(:description => "Product description", :name => "Test Product", :release_date => Time.now())
+Product.create(:description => "P!", :name => "P1", :release_date => Time.now())
 #Product.create(:description => "Product description 2", :name => "Test Product 2", :release_date => Time.now())
 #Product.create(:description => "Product description 3", :name => "Test Product 3", :release_date => Time.now())
 

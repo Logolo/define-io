@@ -11,12 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121202023421) do
-
-  create_table "activities", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20121126052003) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -39,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20121202023421) do
     t.string   "slug"
     t.date     "release_date"
     t.integer  "review_id"
+    t.integer  "score_sum",     :default => 0
     t.integer  "total_reviews", :default => 0
     t.float    "score",         :default => 0.0
     t.datetime "created_at",                     :null => false
@@ -49,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20121202023421) do
   add_index "products", ["slug"], :name => "index_products_on_slug", :unique => true
 
   create_table "reviews", :force => true do |t|
+    t.integer  "old_rating", :default => 0
     t.integer  "rating"
     t.integer  "votes"
     t.integer  "product_id"
@@ -56,8 +53,8 @@ ActiveRecord::Schema.define(:version => 20121202023421) do
     t.string   "title"
     t.string   "written_by"
     t.text     "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   add_index "reviews", ["product_id"], :name => "index_reviews_on_product_id"
