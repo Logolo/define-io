@@ -26,5 +26,6 @@ such as Reddit or similar clones, it seeks to base a product's true score on the
 opinions of the reviews its users submit.
 
 **TODO (12/4/12)**
-* User's name (*written\_by* variable) tied to reviews does not update when the
-  user updates their name. This probably has to do with some JavaScript issues.
+* Finally fixed the ongoing routing issue in finding the current user's review
+  of a given product. I have to add some methods to the Product model to update
+  its information, particularly in relation to its score.

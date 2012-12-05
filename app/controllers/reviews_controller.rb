@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    @review = current_user.reviews.find(:first, :conditions => ["product_id = ?", @product.id])
+    @review = current_user.reviews.where(:product_id => @product.id).first
   end
 
   def new

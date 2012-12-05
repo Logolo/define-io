@@ -28,6 +28,10 @@ module ProductsHelper
     end
   end
 
+  # def reviewed?
+  # argument: product_id
+  # Returns a boolean based on whether or not the current_user
+  # logged in has reviewed a given product.
   def reviewed?(product_id)
     current_user.products_reviewed.include?(product_id)
   end
