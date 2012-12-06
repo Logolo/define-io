@@ -29,14 +29,14 @@ ActiveRecord::Schema.define(:version => 20121126052003) do
   end
 
   create_table "products", :force => true do |t|
+    t.float    "average",       :default => 0.0
     t.text     "description"
     t.string   "name"
     t.string   "slug"
     t.date     "release_date"
     t.integer  "review_id"
-    t.integer  "score_sum",     :default => 0
+    t.integer  "rating_sum",    :default => 0
     t.integer  "total_reviews", :default => 0
-    t.float    "score",         :default => 0.0
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
   end
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20121126052003) do
   create_table "reviews", :force => true do |t|
     t.integer  "old_rating", :default => 0
     t.integer  "rating"
-    t.integer  "votes"
+    t.integer  "votes",      :default => 0
     t.integer  "product_id"
     t.integer  "user_id"
     t.string   "title"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20121126052003) do
     t.string   "email",                  :default => "",    :null => false
     t.string   "encrypted_password",     :default => "",    :null => false
     t.text     "products_reviewed"
+    t.text     "reviews_voted_on"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

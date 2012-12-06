@@ -5,7 +5,9 @@ Define::Application.routes.draw do
   end
   resources :articles
   resources :products do
-    resources :reviews
+    resources :reviews do
+      put 'vote', :on => :member
+    end
   end
   
   match '/admin' => 'core#admin'

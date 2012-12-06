@@ -3,7 +3,7 @@ class CreateReviews < ActiveRecord::Migration
     create_table :reviews do |t|
       t.integer :old_rating, :default => 0
       t.integer :rating
-      t.integer :votes
+      t.integer :votes, :default => 0
       t.references :product
       t.references :user
       t.string :title

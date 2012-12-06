@@ -1,10 +1,9 @@
 <div class="row">
   <div class="span8 offset1">
     <h2><%= @review.title %>, by <%= @review.user.name %> | Products Reviewed: (<%= @review.user.products_reviewed %>)</h2>
-    <h3><a class="vote_up" href="#">⬆</a> <a class="vote_down" href="#">⬇</a> </h3>
-    Product ID: <%= @review.product_id %>
-    User ID: <%= @review.user_id %>
+    <h3><%= link_to '⬆', vote_product_review_path(:review_id => @review.id), :class => "vote_up", :id => "vote_up", :method => :put, :remote => true %><a class="vote_down" href="#">⬇</a> </h3>
     <%= @review.attributes %>
+    <%= current_user.reviews_voted_on %>
     <h3>Score: <%= @review.rating %></h3>
   </div>
 </div>

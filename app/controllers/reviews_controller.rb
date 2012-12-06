@@ -18,6 +18,7 @@ class ReviewsController < ApplicationController
   def edit
     @product = Product.find(params[:id])
     @review = current_user.reviews.where(:product_id => @product.id).first
+    @title = "Update Review for " + @product.name
   end
 
   def new
@@ -26,17 +27,30 @@ class ReviewsController < ApplicationController
   end
 
   def show
+    @product = Product.find(params[:id])
     @review = Review.find(params[:id])
   end
 
   def update
     @product = Product.find(params[:id])
-    @review = current_user.reviews.find(params[:id])
     @old_rating = @review.rating
-
+    @review = current_user.reviews.find(params[:id])
+    
     if @review.update_attributes(params[:review])
       @product.recalculate_rating(@old_rating, @review.rating)
       redirect_to :index_path
+    end
+  end
+
+  def vote
+    @review = Review.find(params[:id])
+    respond_to do |format|
+      if @review.vote_up
+        current_user.reviews_voted_on.push(@review.id)
+        current_user.save()
+        format.html { redirect_to product_reviews_path }
+        format.js
+      end
     end
   end
 end

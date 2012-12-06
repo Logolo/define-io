@@ -7,9 +7,10 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :admin, :name, :email, :password, :password_confirmation, 
-  				        :products_reviewed, :remember_me
+  				        :products_reviewed, :remember_me, :reviews_voted_on
   
   has_many :reviews, :dependent => :destroy
   has_many :comments, :dependent => :destroy
   serialize :products_reviewed, Array
+  serialize :reviews_voted_on, Array
 end

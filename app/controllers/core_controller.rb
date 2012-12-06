@@ -1,7 +1,7 @@
 class CoreController < ApplicationController
   def index
     @products = Product.all()
-    gon.products = Product.order("score DESC")
+    gon.products = Product.order("average DESC")
     @latest_products = @products.reverse[0,10]
   end
   
