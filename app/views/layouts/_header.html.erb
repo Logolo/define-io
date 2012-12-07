@@ -1,10 +1,6 @@
 <script>
 $(document).ready(function() {
 	var c = Raphael(document.getElementById("companies"));
-	var apple = c.set();
-	apple.push(
-		//appleText = c.text(65, 22, "Apple")
-	);
 	var msft = c.set();
 	msft.push(
 		msred = c.rect(106, 11, 8, 8),
@@ -19,13 +15,7 @@ $(document).ready(function() {
 		msyellow = c.rect(118, 23, 8, 8),
 		msyellow.attr("fill", "#ffd900"),
 		msyellow.attr("stroke", "#ffd900"),
-		//mstext = c.text(155, 22, "Microsoft")
 	);
-	/* Sign in nav
-	$("#sign_in_li").click(function() {
-		$("#sign_in_div").css('visibility', 'visible');
-	});
-	*/
 });
 </script>
 <div class="row" id="header-top">

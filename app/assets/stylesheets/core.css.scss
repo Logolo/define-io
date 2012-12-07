@@ -7,16 +7,14 @@
 html, body {
 	//background: image-url('grey.png');
 	//background: #efefef;
-	color: black;
+	color: white;
 	font-family: "Open Sans";
 	height: 100%;
 	margin: 0px;
 	padding: 0px;
 	a {
-		color: black;
-		hover {
-			text-decoration: none;
-		}
+		//color: #47D157;
+
 	}
 }
 
@@ -47,10 +45,14 @@ html, body {
 	//border-bottom: 1px solid gray;
 	margin-bottom: 10px;
 	padding-left: 35px;
+}
+
+#companies_nav {
 	a {
-		hover {
-			color: #21A8DE;
-		}
+		color: #47D157;
+	}
+	a:hover {
+		color: white;
 	}
 }
 
@@ -68,6 +70,7 @@ html, body {
 
 #footer {
 	background: #5C7E9C;
+	color: black;
 	font-size: 14px;
 	height: 20px;
 	position: absolute;
@@ -78,10 +81,11 @@ html, body {
 		padding-left: 40px;
 	}
 	a {
-		hover {
-			color: #21A8DE;
-			text-decoration: none;
-		}
+		color: black;
+	}
+	a:hover {
+		color: #21A8DE;
+		text-decoration: none;
 	}
 }
 
@@ -111,7 +115,7 @@ html, body {
 		li {
 			display: inline;
 			a {
-				color: black;
+				color: #dddddd;
 				text-decoration: none;
 			}
 			a:hover {

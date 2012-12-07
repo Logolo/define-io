@@ -1,0 +1,10 @@
+#review_div {
+  background: white;
+  color: black;
+  min-height: 600px;
+  padding: 10px; }
+  #review_div a:hover {
+    color: #FF864A;
+    text-decoration: none; }
+  #review_div h2 {
+    color: #21A8DE; }

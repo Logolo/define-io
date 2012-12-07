@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="span8 offset1">
+  <div class="span10 offset1" id="review_div">
     <h2><%= @review.title %>, by <%= @review.user.name %> | Products Reviewed: (<%= @review.user.products_reviewed %>)</h2>
     <% if voted_on_review?(@review) == false %>
     <h3><%= link_to '⬆', vote_product_review_path(:review_id => @review.id), :class => "vote_up", :id => "vote_up", :method => :put, :remote => true %><a class="vote_down" href="#">⬇</a> </h3>

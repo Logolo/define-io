@@ -1,14 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700);
 html, body {
-  color: black;
+  color: white;
   font-family: "Open Sans";
   height: 100%;
   margin: 0px;
   padding: 0px; }
-  html a, body a {
-    color: black; }
-    html a hover, body a hover {
-      text-decoration: none; }
 
 .block {
   background: rgba(255, 255, 255, 0.5);
@@ -31,8 +27,11 @@ html, body {
   height: 60px;
   margin-bottom: 10px;
   padding-left: 35px; }
-  #companies a hover {
-    color: #21A8DE; }
+
+#companies_nav a {
+  color: #47D157; }
+#companies_nav a:hover {
+  color: white; }
 
 #container {
   background: #586875;
@@ -46,6 +45,7 @@ html, body {
 
 #footer {
   background: #5C7E9C;
+  color: black;
   font-size: 14px;
   height: 20px;
   position: absolute;
@@ -54,7 +54,9 @@ html, body {
   width: 100%; }
   #footer .row {
     padding-left: 40px; }
-  #footer a hover {
+  #footer a {
+    color: black; }
+  #footer a:hover {
     color: #21A8DE;
     text-decoration: none; }
 
@@ -80,7 +82,7 @@ html, body {
     #nav ul li {
       display: inline; }
       #nav ul li a {
-        color: black;
+        color: #dddddd;
         text-decoration: none; }
       #nav ul li a:hover {
         color: #21A8DE; }
