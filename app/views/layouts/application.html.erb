@@ -11,7 +11,14 @@
 <body>
 	<div id="container">
 		<div id="header"><%= render 'layouts/header' %></div>
-           <div id="companies"></div>
+     <div class="navbar" id="companies">
+      <ul class="nav" id="companies_nav">
+        <li><a href="#">Apple</a></li>
+        <li><a href="#">Google</a></li>
+        <li><a href="#">Microsoft</a></li>
+        <li><a href="#">Samsung</a></li>
+      </ul>
+     </div>
 		<div id="content"><%= yield %></div>
 		<div id="footer"><%= render 'layouts/footer' %></div>
 	</div>
