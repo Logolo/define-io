@@ -1,10 +1,15 @@
-#review_div {
-  background: white;
+#review_body {
+  background: #5C7E9C;
   color: black;
   min-height: 600px;
   padding: 10px; }
-  #review_div a:hover {
-    color: #FF864A;
+  #review_body a {
+    color: #ffffff; }
+  #review_body a:hover {
+    color: #47D157;
     text-decoration: none; }
-  #review_div h2 {
+  #review_body h2 {
     color: #21A8DE; }
+
+#review_title h2 {
+  color: black; }

@@ -1,13 +1,25 @@
 <div class="row">
-  <div class="span10 offset1" id="review_div">
-    <h2><%= @review.title %>, by <%= @review.user.name %> | Products Reviewed: (<%= @review.user.products_reviewed %>)</h2>
+  <div class="span10" id="review_body">
+    <div id="review_title">
+      <h2><%= @review.title %>, by <%= @review.user.name %></h2>
+    </div>
+    <div id="review_content">
+      <%= @review.content %>
+    </div>
+    <div id="review_vote">
     <% if voted_on_review?(@review) == false %>
-    <h3><%= link_to '⬆', vote_product_review_path(:review_id => @review.id), :class => "vote_up", :id => "vote_up", :method => :put, :remote => true %><a class="vote_down" href="#">⬇</a> </h3>
-    <% else %>
-      You have already voted.<br />
-    <% end %>
-    Attributes: <%= @review.attributes %>
-    <%= current_user.reviews_voted_on %>
-    <h3>Score: <%= @review.rating %></h3>
+      <h3><%= link_to '⬆', vote_product_review_path(:review_id => @review.id), 
+                                                     :class => "vote_up",
+                                                     :id => "vote_up", 
+                                                     :method => :put, 
+                                                     :remote => true %>
+      <a class="vote_down" href="#">⬇</a> </h3>
+      <% else %>
+        You have already voted.<br />
+      <% end %>
+    </div>
+    <div id="review_score">
+      <h3>Score: <%= @review.rating %></h3>
+    </div>
   </div>
 </div>

@@ -13,8 +13,11 @@ html, body {
 	margin: 0px;
 	padding: 0px;
 	a {
-		//color: #47D157;
-
+		color: #E3E362;
+	}
+	a:hover {
+		color: white;
+		text-decoration: none;
 	}
 }
 
@@ -162,79 +165,3 @@ html, body {
 //#user_email {
 //	width: 45px;
 //}
-
-
-
-
-/*
-.block {
-	background: rgba(0, 0, 0, 0.1);
-	border: 1px solid gray;
-	float: left;
-	height: 100px;
-	margin: 10px;
-	padding: 10px;
-	width: 220px;
-}
-
-#newest_products {
-	background: white;
-	border: 1px solid gray;
-	margin-left: 30px;
-	margin-right: 30px;
-	padding-bottom: 10px;
-	padding-left: 10px;
-	padding-top: 10px;
-	width: 710px;
-}
-
-#companies {
-	height: 40px;
-	border-top: 1px solid gray;
-	border-bottom: 1px solid gray;
-	margin-bottom: 15px;
-}
-
-#container {
-	position: relative;
-}
-
-#content {
-	overflow: hidden;
-	padding: 10px;
-	padding-bottom: 100px;
-}
-
-#footer {
-	background: rgba(0, 0, 0, 0.1);
-	font-size: 14px;
-	height: 80px;
-	padding-left: 20px;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-}
-
-#nav {
-	float: left;
-	height: 40px;
-	margin-top: 55px;
-	padding-left: 0px;
-	width: 750px;
-	ul {
-		display: inline;
-		list-style-type: none;
-		li {
-			display: inline;
-			padding-left: 40px;
-			a {
-				color: black;
-				text-decoration: none;
-			}
-			a:hover {
-				color: #21A8DE;
-			}
-		}
-	}
-}
-*/
