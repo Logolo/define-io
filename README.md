@@ -25,7 +25,7 @@ early stages, is rather simple. Taking the best elements from social news websit
 such as Reddit or similar clones, it seeks to base a product's true score on the
 opinions of the reviews its users submit.
 
-**TODO (12/6/12)**
+**TODO (12/9/12)**
 * Basic helper method in reviews_helper.rb has been implemented which tracks
   the reviews_voted_on array/serializiation to see if a user has voted on a given
   review. That helper is used in the review's show view as of right now, but it
@@ -42,3 +42,5 @@ opinions of the reviews its users submit.
   if only so I have a better idea of where things need to be and what functionality
   they need to have. My goal isn't to overcomplicate the design, by any means,
   but there is likely going to be a need for a lot of JavaScript.
+* I've removed the use of friendly_id for now because it's messing with my RESTful
+  routes with products/reviews. I'll fix it later on.

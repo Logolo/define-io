@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(:version => 20121126052003) do
     t.float    "average",       :default => 0.0
     t.text     "description"
     t.string   "name"
-    t.string   "slug"
     t.date     "release_date"
     t.integer  "review_id"
     t.integer  "rating_sum",    :default => 0
@@ -42,7 +41,6 @@ ActiveRecord::Schema.define(:version => 20121126052003) do
   end
 
   add_index "products", ["review_id"], :name => "index_products_on_review_id"
-  add_index "products", ["slug"], :name => "index_products_on_slug", :unique => true
 
   create_table "reviews", :force => true do |t|
     t.integer  "old_rating", :default => 0

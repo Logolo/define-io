@@ -1,8 +1,6 @@
 class Product < ActiveRecord::Base
-  extend FriendlyId
-  attr_accessible :average, :description, :name, :release_date, :rating_sum, :slug, :total_reviews
+  attr_accessible :average, :description, :name, :release_date, :rating_sum, :total_reviews
   has_many :reviews, :dependent => :destroy
-  friendly_id :name, :use => :slugged
 
   # def add_new_rating
   # Argument: rating

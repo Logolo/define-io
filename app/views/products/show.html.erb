@@ -22,15 +22,19 @@ $(document).ready(function() {
     <%= @product.attributes %>
   </div>
 </div>
-<div id="reviews">
-  <% @product.reviews.each do |review| %>
-  <%= link_to review.title, ([@product, review]) %><br />
-  <% end %>
-</div>
-<div>
-  <% if reviewed?(@product.id) %>
-    <%= link_to 'Edit your review', edit_product_review_path(:product_id => @product.id) %>
-  <% else %>
-    <%= link_to 'Review Product', new_product_review_path(@product) %>
-  <% end %>
+<div class="row">
+  <div class="span6 offset1">
+    <div id="reviews">
+      <% @reviews.each do |review| %>
+      <%= link_to review.title, product_review_path(@product, review) %> | Votes: <%= review.votes %><br />
+      <% end %>
+    </div>
+    <div>
+      <% if reviewed?(@product.id) %>
+        <%= link_to 'Edit your review', edit_product_review_path(:product_id => @product.id) %>
+      <% else %>
+        <%= link_to 'Review Product', new_product_review_path(@product) %>
+      <% end %>
+    </div>
+  </div>
 </div>

@@ -1,8 +1,8 @@
 class ReviewsController < ApplicationController
   def create
     @product = Product.find(params[:product_id])
-    @review = @product.reviews.build(params[:review])
-    @review.user_id = current_user
+    @review = @product.reviews.new(params[:review])
+    @review.user = current_user
     @review.written_by = current_user.name
 
     respond_to do |format|
@@ -27,7 +27,6 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
     @review = Review.find(params[:id])
   end
 
@@ -42,7 +41,19 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def vote
+  def vote_down
+    @review = Review.find(params[:id])
+    respond_to do |format|
+      if @review.vote_down
+        current_user.reviews_voted_on.push(@review.id)
+        current_user.save()
+        format.html { redirect_to product_reviews_path }
+        format.js
+      end
+    end
+  end
+
+  def vote_up
     @review = Review.find(params[:id])
     respond_to do |format|
       if @review.vote_up

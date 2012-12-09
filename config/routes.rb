@@ -6,7 +6,8 @@ Define::Application.routes.draw do
   resources :articles
   resources :products do
     resources :reviews do
-      put 'vote', :on => :member
+      put 'vote_down', :on => :member
+      put 'vote_up', :on => :member
     end
   end
   

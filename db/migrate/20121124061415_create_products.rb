@@ -4,7 +4,6 @@ class CreateProducts < ActiveRecord::Migration
       t.float :average, :default => 0
       t.text :description
       t.string :name
-      t.string :slug
       t.date :release_date
       t.references :review
       t.integer :rating_sum, :default => 0
@@ -14,6 +13,5 @@ class CreateProducts < ActiveRecord::Migration
     end
 
     add_index :products, :review_id
-    add_index :products, :slug, :unique => true
   end
 end

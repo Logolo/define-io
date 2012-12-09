@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all()
+    @products = Product.order("average DESC")
     @title = "Products"
   end
   

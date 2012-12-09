@@ -5,15 +5,20 @@
     </div>
     <div id="review_content">
       <%= @review.content %>
+      <%= @review.attributes %>
     </div>
     <div id="review_vote">
     <% if voted_on_review?(@review) == false %>
-      <h3><%= link_to '⬆', vote_product_review_path(:review_id => @review.id), 
+      <h3><%= link_to '⬆', vote_up_product_review_path(:review_id => @review.id), 
                                                      :class => "vote_up",
                                                      :id => "vote_up", 
                                                      :method => :put, 
                                                      :remote => true %>
-      <a class="vote_down" href="#">⬇</a> </h3>
+      <h3><%= link_to '⬇', vote_down_product_review_path(:review_id => @review.id), 
+                                                     :class => "vote_down",
+                                                     :id => "vote_down", 
+                                                     :method => :put, 
+                                                     :remote => true %>
       <% else %>
         You have already voted.<br />
       <% end %>
