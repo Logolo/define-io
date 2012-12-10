@@ -6,14 +6,14 @@ html, body {
   margin: 0px;
   padding: 0px; }
   html a, body a {
-    color: #E3E362; }
+    color: #51C0F0; }
   html a:hover, body a:hover {
-    color: white;
+    color: #E3E362;
     text-decoration: none; }
 
 .block {
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid gray;
+  background: #5C7E9C;
+  border: 1px solid black;
   float: left;
   height: 200px;
   margin: 10px;
@@ -23,9 +23,9 @@ html, body {
 .product {
   height: 30px; }
   .product.even_product {
-    background: #dddddd; }
+    background: #5C7E9C; }
   .product.odd_product {
-    background: #cccccc; }
+    background: #375066; }
 
 #companies {
   background: #5C7E9C;
