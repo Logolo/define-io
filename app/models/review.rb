@@ -6,7 +6,7 @@ class Review < ActiveRecord::Base
   validates :user_id, :presence => true
 
   def vote_down(changed_vote = false)
-    unless changed_vote
+    if changed_vote
       self.votes -= 1
     else
       self.votes -= 2
@@ -15,7 +15,7 @@ class Review < ActiveRecord::Base
   end
 
   def vote_up(changed_vote = false)
-    unless changed_vote
+    if changed_vote
       self.votes += 1
     else
       self.votes += 2

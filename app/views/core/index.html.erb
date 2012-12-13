@@ -1,6 +1,9 @@
 <div class="row" id="update_blocks">
 	<div class="block">
-		<b>LATEST NEWS</b>
+		<b>LATEST NEWS</b><br />
+		<% @latest_articles.each do |article| %>
+			<%= link_to article.title, article_path(article) %><br />
+		<% end %>
 	</div>
 	<div class="block">
 		<b>LATEST PRODUCTS</b><br />
