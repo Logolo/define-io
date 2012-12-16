@@ -9,6 +9,7 @@ html, body {
 	//background: #efefef;
 	color: white;
 	font-family: "Open Sans";
+	font-size: 12px;
 	height: 100%;
 	margin: 0px;
 	padding: 0px;
@@ -32,7 +33,7 @@ html, body {
 }
 
 .product {
-	height: 30px;
+	height: 20px;
 	&.even_product {
 		background: #5C7E9C;
 	}
@@ -74,7 +75,7 @@ html, body {
 #footer {
 	background: #5C7E9C;
 	color: black;
-	font-size: 14px;
+	font-size: 12px;
 	height: 20px;
 	position: absolute;
 	bottom: 0;
