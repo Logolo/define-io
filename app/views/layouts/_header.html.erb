@@ -26,15 +26,16 @@ $(document).ready(function() {
 			<div class="span3">
 				<div id="logo"><%= link_to 'DEFINE.IO', :index_path %></div>
 			</div>
-			<div class="span6 offset2" id="nav">
+			<div class="span7" id="nav">
 				<div class="navbar">
 					<ul class="nav">
 						<li><a href="/news">NEWS</a></li>
 						<li><a href="/products">PRODUCTS</a></li>
 						<li><a href="#">FORUMS</a></li>
+						<li><a href="#">CHAT</a></li>
 					</ul>
 					<% if user_signed_in? %>
-					<ul class="nav pull-right">
+					<ul class="nav pull-right" id="account">
 						<li><%= link_to current_user.name, edit_user_registration_path %></a></li>
 						<li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %><li>
 					</ul>

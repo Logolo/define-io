@@ -11,6 +11,8 @@ html, body {
   html a:hover, body a:hover {
     color: #E3E362;
     text-decoration: none; }
+  html h3, body h3 {
+    color: #51C0F0; }
 
 .block {
   background: #5C7E9C;
@@ -27,6 +29,9 @@ html, body {
     background: #5C7E9C; }
   .product.odd_product {
     background: #375066; }
+
+#account {
+  padding-left: 40px; }
 
 #companies {
   background: #5C7E9C;
@@ -81,7 +86,7 @@ html, body {
 
 #nav {
   height: 40px;
-  padding-left: 0px; }
+  padding-left: 100px; }
   #nav ul {
     display: inline;
     list-style-type: none; }
@@ -92,6 +97,9 @@ html, body {
         text-decoration: none; }
       #nav ul li a:hover {
         color: #21A8DE; }
+
+#newest_reviews {
+  width: 840px; }
 
 #reviews_within .active {
   color: #3ea0ca; }
