@@ -33,7 +33,7 @@ $(document).ready(function() {
 					<% else %>
 					<ul class="nav pull-right">
 						<li><%= link_to 'REGISTER', :registration_path %></li>
-						<li id="sign_in_li"><%= link_to 'SIGN IN', "#" %></li>
+						<li id="sign_in_li"><%= link_to 'SIGN IN', new_user_session_path %></li>
 						<div id="sign_in_div">
 							<%= form_for(:user, :url  => user_session_path) do |f| %>
 							<%= f.text_field :email, :placeholder => "Email", :cols => 10 %>
