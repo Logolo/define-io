@@ -1,24 +1,26 @@
-<div class="row" id="update_blocks">
-	<div class="block">
-		<b>LATEST NEWS</b><br />
-		<% @latest_articles.each do |article| %>
-			<%= link_to article.title, article_path(article) %><br />
-		<% end %>
-	</div>
-	<div class="block">
-		<b>LATEST PRODUCTS</b><br />
-		<div class="latest_products">
-		<% @latest_products.each do |product| %>
-			<%= link_to(product.name, product) %><br />
-		<% end %>
+<div class="row">
+	<div class="span10" id="update_blocks">
+		<div class="block">
+			<b>LATEST NEWS</b><br />
+			<% @latest_articles.each do |article| %>
+				<%= link_to article.title, article_path(article) %><br />
+			<% end %>
 		</div>
-	</div>
-	<div class="block">
-		<b>ACTIVE THREADS</b>
+		<div class="block">
+			<b>LATEST PRODUCTS</b><br />
+			<div class="latest_products">
+			<% @latest_products.each do |product| %>
+				<%= link_to(product.name, product) %><br />
+			<% end %>
+			</div>
+		</div>
+		<div class="block">
+			<b>ACTIVE THREADS</b>
+		</div>
 	</div>
 </div>
 <div class="row">
-	<div class="offset1" id="newest_reviews">
+	<div class="span10 offset1" id="newest_reviews">
 		<div id="reviews_within">
 				<h3>Top Reviewed Products:</h3>
 				Products within last: <a class="active" href="#" id="7" value="7">7</a>
