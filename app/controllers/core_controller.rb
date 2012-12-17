@@ -1,4 +1,9 @@
 class CoreController < ApplicationController
+  def chat
+    gon.current_user = current_user
+    @title = "Chat"
+  end
+
   def index
     @products = Product.all()
     gon.products = Product.order("average DESC")
@@ -7,8 +12,8 @@ class CoreController < ApplicationController
   end
   
   def news
-    @title = "News"
     @articles = Article.all()
+    @title = "News"
   end
   
   def products

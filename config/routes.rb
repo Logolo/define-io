@@ -12,6 +12,7 @@ Define::Application.routes.draw do
   end
   
   match '/admin' => 'core#admin'
+  match '/chat' => 'core#chat', :as => :chat_path
   match '/news' => 'core#news', :as => :news_path
   match '/products' => 'products#index', :as => :products_path
   root :to => 'core#index', :as => :index_path
