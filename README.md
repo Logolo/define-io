@@ -25,6 +25,8 @@ early stages, is rather simple. Taking the best elements from social news websit
 such as Reddit or similar clones, it seeks to base a product's true score on the
 opinions of the reviews its users submit.
 
+Current Heroku testing available at: http://arcane-meadow-5972.herokuapp.com/
+
 **TODO/UPDATES (12/16/12)**
 * Basic helper method in reviews_helper.rb has been implemented which tracks
   the reviews_voted_on array/serializiation to see if a user has voted on a given
