@@ -27,7 +27,10 @@ opinions of the reviews its users submit.
 
 Current Heroku testing available at: http://arcane-meadow-5972.herokuapp.com/
 
-**TODO/UPDATES (12/16/12)**
+**TODO/UPDATES (12/20/12)**
+* There are some issues where not being logged in causes an error. This is due to
+  the controller trying to access certain variables which can't exist if the user
+  is not logged in. I will fix this.
 * Basic helper method in reviews_helper.rb has been implemented which tracks
   the reviews_voted_on array/serializiation to see if a user has voted on a given
   review. That helper is used in the review's show view as of right now, but it
