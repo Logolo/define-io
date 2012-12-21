@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
     @reviews = @product.reviews
     gon.reviews = @product.reviews.order("rating DESC")
     @title = @product.name
-    if current_user.products_reviewed.include?(@product)
+    if user_signed_in? && current_user.products_reviewed.include?(@product)
       @review = current_user.reviews.find(:conditions => ["product_id = ?", @product.id])
     else
       @review = Review.new()
