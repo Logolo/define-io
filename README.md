@@ -25,12 +25,9 @@ early stages, is rather simple. Taking the best elements from social news websit
 such as Reddit or similar clones, it seeks to base a product's true score on the
 opinions of the reviews its users submit.
 
-Current Heroku testing available at: http://arcane-meadow-5972.herokuapp.com/
+Current Heroku testing/alpha available at: http://beta.define.io/
 
-**TODO/UPDATES (12/20/12)**
-* There are some issues where not being logged in causes an error. This is due to
-  the controller trying to access certain variables which can't exist if the user
-  is not logged in. I will fix this.
+**TODO/UPDATES (12/22/12)**
 * Basic helper method in reviews_helper.rb has been implemented which tracks
   the reviews_voted_on array/serializiation to see if a user has voted on a given
   review. That helper is used in the review's show view as of right now, but it
