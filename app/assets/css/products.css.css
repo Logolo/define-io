@@ -1,0 +1,21 @@
+button.add_new_product_button {
+  background: #FFFFFF;
+  border: 2px solid #4B5760;
+  border-radius: 10px;
+  text-decoration: none; }
+
+.product_information {
+  border: 1px solid gray;
+  border-radius: 4px;
+  margin: 10px;
+  padding: 10px; }
+
+.review {
+  height: 30px;
+  padding-left: 10px;
+  padding-top: 10px;
+  width: 750px; }
+  .review.even_review {
+    background: #dddddd; }
+  .review.odd_review {
+    background: #cccccc; }

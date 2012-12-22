@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+button {
+  &.add_new_product_button {
+    background: #FFFFFF;
+    border: 2px solid #4B5760;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+}
 .product_information {
   border: 1px solid gray;
   border-radius: 4px;

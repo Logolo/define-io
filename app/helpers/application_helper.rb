@@ -5,9 +5,9 @@ module ApplicationHelper
   # (@title) exists.
   def page_title(title)
     if title
-      return title + ' | Define.IO'
+      return title + ' | define.io'
     else
-      return 'Define.IO'
+      return 'define.io'
     end
   end
 end
