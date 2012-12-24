@@ -43,24 +43,30 @@ class ReviewsController < ApplicationController
 
   def vote_down
     @review = Review.find(params[:id])
-    respond_to do |format|
-      if @review.vote_down
-        current_user.reviews_voted_on.push(@review.id)
+    if current_user.reviews_voted_on[@review.id] == "up"
+      if @review.vote_down(changed_vote = true)
+        current_user.reviews_voted_on = current_user.reviews_voted_on.merge({@review.id => "down"})
         current_user.save()
-        format.html { redirect_to product_reviews_path }
-        format.js
+      end
+    else
+      if @review.vote_down()
+        current_user.reviews_voted_on = current_user.reviews_voted_on.merge({@review.id => "down"})
+        current_user.save()
       end
     end
   end
 
   def vote_up
     @review = Review.find(params[:id])
-    respond_to do |format|
-      if @review.vote_up
-        current_user.reviews_voted_on.push(@review.id)
+    if current_user.reviews_voted_on[@review.id] == "down"
+      if @review.vote_up(changed_vote = true)
+        current_user.reviews_voted_on = current_user.reviews_voted_on.merge({@review.id => "up"})
         current_user.save()
-        format.html { redirect_to product_reviews_path }
-        format.js
+      end
+    else
+      if @review.vote_up()
+        current_user.reviews_voted_on = current_user.reviews_voted_on.merge({@review.id => "up"})
+        current_user.save()
       end
     end
   end

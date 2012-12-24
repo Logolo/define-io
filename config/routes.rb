@@ -10,6 +10,7 @@ Define::Application.routes.draw do
       put 'vote_up', :on => :member
     end
   end
+  resources :users, :only => :show
   
   match '/admin' => 'core#admin'
   match '/chat' => 'core#chat', :as => :chat_path

@@ -7,18 +7,18 @@ class Review < ActiveRecord::Base
 
   def vote_down(changed_vote = false)
     if changed_vote
-      self.votes -= 1
-    else
       self.votes -= 2
+    else
+      self.votes -= 1
     end
     self.save()
   end
 
   def vote_up(changed_vote = false)
     if changed_vote
-      self.votes += 1
-    else
       self.votes += 2
+    else
+      self.votes += 1
     end
     self.save()
   end

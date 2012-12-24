@@ -1,3 +1,10 @@
+<script>
+$(document).ready(function() {
+  $('.vote').click(function() {
+    $('.vote').hide();
+  });
+});
+</script>
 <div class="row">
   <div class="span10" id="review_body">
     <div id="review_title">
@@ -10,18 +17,32 @@
     <div id="review_vote">
     <% if voted_on_review?(@review) == false %>
       <h3><%= link_to '⬆', vote_up_product_review_path(:review_id => @review.id), 
-                                                     :class => "vote_up",
+                                                     :class => "vote",
                                                      :id => "vote_up", 
                                                      :method => :put, 
-                                                     :remote => true %>
+                                                     :remote => true %></h3>
       <h3><%= link_to '⬇', vote_down_product_review_path(:review_id => @review.id), 
-                                                     :class => "vote_down",
+                                                     :class => "vote",
+                                                     :id => "vote_down", 
+                                                     :method => :put, 
+                                                     :remote => true %></h3>
+    <% elsif voted_on_review?(@review) %>
+      <% if current_user.reviews_voted_on[@review.id] == "up" %>
+        <h3><%= link_to '⬇', vote_down_product_review_path(:review_id => @review.id), 
+                                                     :class => "vote",
                                                      :id => "vote_down", 
                                                      :method => :put, 
                                                      :remote => true %>
       <% else %>
-        You have already voted.<br />
-      <% end %>
+        <h3><%= link_to '⬆', vote_up_product_review_path(:review_id => @review.id), 
+                                                     :class => "vote",
+                                                     :id => "vote_up", 
+                                                     :method => :put, 
+                                                     :remote => true %></h3>
+                                                     <% end %>
+    <% else %>
+      You have already voted.<br />
+    <% end %>
     </div>
     <div id="review_score">
       <h3>Score: <%= @review.rating %></h3>
