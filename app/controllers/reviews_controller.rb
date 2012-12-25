@@ -41,6 +41,15 @@ class ReviewsController < ApplicationController
     end
   end
 
+  # def vote_down
+  # Vote down function. Pull the current review by its id, then test to see if
+  # the current user has already voted up the given review in question. If the
+  # current_user's reviews_voted_on id_key value is equal to "down" (as stored
+  # within the hash), do nothing. This is a security measure against a user
+  # attempting to vote a review down more than once. Assuming that the check
+  # passes, test to see if the user has voted the review up. If so, run the
+  # Review class's vote_up, but set the changed_vote parameter to true.
+  # Otherwise, run as normal.
   def vote_down
     @review = Review.find(params[:id])
     if current_user.reviews_voted_on[@review.id] == "up"
@@ -56,6 +65,15 @@ class ReviewsController < ApplicationController
     end
   end
 
+  # def vote_up
+  # Vote up function. Pull the current review by its id, then test to see if
+  # the current user has already voted up the given review in question. If the
+  # current_user's reviews_voted_on id_key value is equal to "up" (as stored
+  # within the hash), do nothing. This is a security measure against a user
+  # attempting to vote a review up more than once. Assuming that the check
+  # passes, test to see if the user has voted the review down. If so, run the
+  # Review class's vote_up, but set the changed_vote parameter to true.
+  # Otherwise, run as normal.
   def vote_up
     @review = Review.find(params[:id])
     if current_user.reviews_voted_on[@review.id] == "down"
