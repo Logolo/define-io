@@ -52,15 +52,17 @@ class ReviewsController < ApplicationController
   # Otherwise, run as normal.
   def vote_down
     @review = Review.find(params[:id])
-    if current_user.reviews_voted_on[@review.id] == "up"
-      if @review.vote_down(changed_vote = true)
-        current_user.reviews_voted_on = current_user.reviews_voted_on.merge({@review.id => "down"})
-        current_user.save()
-      end
-    else
-      if @review.vote_down()
-        current_user.reviews_voted_on = current_user.reviews_voted_on.merge({@review.id => "down"})
-        current_user.save()
+    unless current_user.reviews_voted_on[@review.id] == "down"
+      if current_user.reviews_voted_on[@review.id] == "up"
+        if @review.vote_down(changed_vote = true)
+          current_user.reviews_voted_on = current_user.reviews_voted_on.merge({@review.id => "down"})
+          current_user.save()
+        end
+      else
+        if @review.vote_down()
+          current_user.reviews_voted_on = current_user.reviews_voted_on.merge({@review.id => "down"})
+          current_user.save()
+        end
       end
     end
   end
@@ -76,15 +78,17 @@ class ReviewsController < ApplicationController
   # Otherwise, run as normal.
   def vote_up
     @review = Review.find(params[:id])
-    if current_user.reviews_voted_on[@review.id] == "down"
-      if @review.vote_up(changed_vote = true)
-        current_user.reviews_voted_on = current_user.reviews_voted_on.merge({@review.id => "up"})
-        current_user.save()
-      end
-    else
-      if @review.vote_up()
-        current_user.reviews_voted_on = current_user.reviews_voted_on.merge({@review.id => "up"})
-        current_user.save()
+    unless current_user.reviews_voted_on[@review.id] == "up"
+      if current_user.reviews_voted_on[@review.id] == "down"
+        if @review.vote_up(changed_vote = true)
+          current_user.reviews_voted_on = current_user.reviews_voted_on.merge({@review.id => "up"})
+          current_user.save()
+        end
+      else
+        if @review.vote_up()
+          current_user.reviews_voted_on = current_user.reviews_voted_on.merge({@review.id => "up"})
+          current_user.save()
+        end
       end
     end
   end
