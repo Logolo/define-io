@@ -27,24 +27,8 @@ opinions of the reviews its users submit.
 
 Current Heroku testing/alpha available at: http://beta.define.io/
 
-**TODO/UPDATES (12/22/12)**
-* Basic helper method in reviews_helper.rb has been implemented which tracks
-  the reviews_voted_on array/serializiation to see if a user has voted on a given
-  review. That helper is used in the review's show view as of right now, but it
-  only tracks if a vote has been cast. There is no way to currently change one's
-  vote. This is not necessarily a top priority, but it will be resolved at some
-  point to allow for that to be changed.
-* I might like to add a company field to the products to allow for the user to
-  search by company. In messing around with Raphael.js, I put a little Microsoft
-  logo in the companies bar, so my thought is that I'll do it at some point, but
-  I will have to then implement a search bar, which is another task on its own
-  as there will have to be a variation of search options.
-* There's a lot of work which needs to be done with regards to the layout, and
-  to be honest this may have to be where much of the future work needs to be done,
-  if only so I have a better idea of where things need to be and what functionality
-  they need to have. My goal isn't to overcomplicate the design, by any means,
-  but there is likely going to be a need for a lot of JavaScript.
+**TODO/UPDATES (12/28/12)**
 
-I've done a bit of work fixing things in the layout, but I really need to refactor and
-clean up the CSS/SCSS itself. It's possibly starting to become a bit unweildy, if only
-because I can most likely condense a lot of overlapping element styles.
+* The layout is a mess right now! I need to clean up a lot of things and possibly
+  rework the way I'm using Bootstrap in order to get a better and more consistent
+  design. It's tough because I'm still not so great with frontend. :(
