@@ -6,8 +6,12 @@
 <div class="row">
   <div class="span6 offset1">
     <div id="reviews">
-      <% @reviews.each do |review| %>
-      <%= link_to review.title, product_review_path(@product, review) %> | Votes: <%= review.votes %><br />
+      <% if @reviews.count > 0 %>
+        <% @reviews.each do |review| %>
+        <%= link_to review.title, product_review_path(@product, review) %> | Votes: <%= review.votes %><br />
+        <% end %>
+      <% else %>
+        <p>There are currently no reviews for this product.</p>
       <% end %>
     </div>
     <div>
