@@ -10,7 +10,7 @@
 			<b>LATEST PRODUCTS</b><br />
 			<div class="latest_products">
 			<% @latest_products.each do |product| %>
-				<%= link_to(product.name, product) %><br />
+				<%= link_to(product.name + " | " + product.total_reviews.to_s + " reviews", product) %><br />
 			<% end %>
 			</div>
 		</div>
