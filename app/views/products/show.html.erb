@@ -1,25 +1,6 @@
-<!--
-<script>
-$(document).ready(function() {
-  $("#reviews").html("");
-  console.log(gon.reviews);
-  _.each(gon.reviews, function(review) {
-    //var reviewId = "\"review" + gon.reviews.indexOf(review) + "\"";
-    if (gon.reviews.indexOf(review) % 2 == 0) {
-      $("#reviews").append("<div class=\"review even_review\" id=\"review\">⬆ ⬇ " + review.title +
-        " | Rating: " + review.rating + " | Written By: " + review.written_by + "</div>");
-    } else {
-      $("#reviews").append("<div class=\"review odd_review\" id=\"review\" > ⬆ ⬇ " + review.title +
-        " | Rating: " + review.rating + " | Written By: " + review.written_by + "</div>");
-    }
-  });
-});
-</script>
--->
 <div class="row">
   <div class="span6 offset1">
     <h2><%= @product.name %> Reviews</h2>
-    <%= @product.attributes %>
   </div>
 </div>
 <div class="row">

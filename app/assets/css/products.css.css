@@ -1,3 +1,6 @@
+body h2 {
+  color: white; }
+
 button.add_new_product_button {
   background: #FFFFFF;
   border: 2px solid #4B5760;
