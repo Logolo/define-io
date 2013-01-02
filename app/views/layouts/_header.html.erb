@@ -14,7 +14,7 @@ $(document).ready(function() {
 		<ul class="nav pull-right">
 			<% if user_signed_in? %>
 				<li><%= link_to current_user.name, edit_user_registration_path %></a></li>
-				<li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %><li>
+				<li><%= link_to 'logout', destroy_user_session_path, :method => :delete %><li>
 			<% else %>
 				<li><%= link_to 'register', :registration_path %></li>
 				<li><%= link_to 'sign in', new_user_session_path %>
