@@ -27,8 +27,9 @@ opinions of the reviews its users submit.
 
 Current Heroku testing/alpha available at: http://beta.define.io/
 
-**TODO/UPDATES (12/28/12)**
+**TODO/UPDATES (1/1/13)**
 
-* The layout is a mess right now! I need to clean up a lot of things and possibly
-  rework the way I'm using Bootstrap in order to get a better and more consistent
-  design. It's tough because I'm still not so great with frontend. :(
+* Doing some massive changes to the layout! After this, I will aim to get some better
+  JavaScript going in order to display information about various products on the main
+  page as well as in other parts of the site. I might want to add a company attribute
+  to the products in the near future.

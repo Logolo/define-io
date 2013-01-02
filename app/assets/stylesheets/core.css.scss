@@ -3,9 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700);
+@import "bootstrap";
 
 html, body {
-	color: white;
+	//background: url('grey.png');
+	background: #F6F6F6;
 	font-family: "Open Sans";
 	font-size: 12px;
 	height: 100%;
@@ -24,13 +26,36 @@ html, body {
 }
 
 .block {
-	background: #5C7E9C;
+	background: #E7E7E7;
 	border: 1px solid black;
 	float: left;
 	height: 200px;
 	margin: 10px;
 	padding: 10px;
 	width: 215px;
+}
+
+.navbar {
+	li {
+		padding-top: 32px;
+		a {
+			font-size: 16px;
+		}
+	}
+
+	.brand {
+		//color: white;
+		font-size: 64px;
+		padding-top: 25px;
+	}
+}
+
+.navbar-inner {
+	background: #E7E7E7;
+	border: none;
+  border-radius: 0px;
+  box-shadow: none;
+  height: 80px;
 }
 
 .product {
@@ -46,29 +71,6 @@ html, body {
 #account {
 	padding-left: 40px;
 }
-
-input[type=email] {
-	background: #4B5760;
-	border: none;
-	border-radius: 0px;
-	box-shadow:inset 0 0 5px #000000;
-}
-
-input[type=password] {
-	background: #4B5760;
-	border: none;
-	border-radius: 0px;
-	box-shadow:inset 0 0 5px #000000;
-}
-
-input[type=text] {
-	background: #4B5760;
-	border: none;
-	border-radius: 0px;
-	box-shadow:inset 0 0 5px #000000;
-}
-
-
 
 #chat_input {
 	padding-top: 5px;
@@ -110,7 +112,7 @@ input[type=text] {
 }
 
 #container {
-	background: #586875;
+	//background: #586875;
 	min-height: 100%;
 	position: relative;
 }
@@ -122,10 +124,10 @@ input[type=text] {
 }
 
 #footer {
-	background: #5C7E9C;
+	//background: #5C7E9C;
 	color: black;
 	font-size: 12px;
-	height: 20px;
+	height: 60px;
 	position: absolute;
 	bottom: 0;
 	left: 0;

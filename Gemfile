@@ -16,7 +16,9 @@ group :production do
   gem 'pg'
 end
 
+gem 'bootstrap-sass'
 gem 'devise'
+gem 'friendly_id'
+gem 'newrelic_rpm'
 gem 'gon'
 gem 'jquery-rails'
-gem 'friendly_id'

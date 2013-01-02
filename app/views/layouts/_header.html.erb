@@ -1,61 +1,24 @@
 <script>
-$("sign_in_div").hide();
 $(document).ready(function() {
-	$("#sign_in_li").click(function() {
-		if ($("#sign_in_div").css("visibility") == "hidden") {
-			$("#sign_in_div").css("visibility", "visible");
-		} else {
-			$("#sign_in_div").css("visibility", "hidden");
-		}
-	});
-	$("#sign_in_div").click(function (event) {
-		event.stopPropagation();
-	});
+		$('.dropdown-toggle').dropdown();
 });
 </script>
-<div class="row" id="header-top">
-	<div class="span12">
-		<div class="row">
-			<div class="span3">
-				<div id="logo"><%= link_to 'define.io', :index_path %><b style="color: yellow">alpha!</b></div>
-			</div>
-			<div class="span7" id="nav">
-				<div class="navbar">
-					<ul class="nav">
-						<li><a href="/news">NEWS</a></li>
-						<li><a href="/products">PRODUCTS</a></li>
-						<li><a href="#">FORUMS</a></li>
-					</ul>
-					<% if user_signed_in? %>
-					<ul class="nav pull-right" id="account">
-						<li><%= link_to current_user.name, edit_user_registration_path %></a></li>
-						<li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %><li>
-					</ul>
-					<% else %>
-					<ul class="nav pull-right">
-						<li><%= link_to 'REGISTER', :registration_path %></li>
-						<li id="sign_in_li"><%= link_to 'SIGN IN', "#" %></li>
-						<div id="sign_in_div">
-							<%= form_for(:user, :url  => user_session_path) do |f| %>
-							<%= f.text_field :email, :placeholder => "Email", :cols => 10 %>
-							<%= f.password_field :password, :placeholder => "Password" %>
-							<%= f.submit "Sign in", :class => "btn btn-primary" %>
-							<% end %>
-						</div>
-					<% end %>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="row" id="companies">
-	<div class="navbar span12">
-	  <ul class="nav" id="companies_nav">
-	    <li><a href="#">Apple</a></li>
-	    <li><a href="#">Google</a></li>
-	    <li><a href="#">Microsoft</a></li>
-	    <li><a href="#">Samsung</a></li>
-	    <li><a href="#">Sony</a></li>
-	  </ul>
+<div class="navbar">
+	<div class="navbar-inner">
+		<a class="brand" href="/">define.io</a>
+		<ul class="nav">
+			<li><a href="/news">news</a></li>
+			<li><a href="/products">products</a></li>
+			<li><a href="#">forums</a></li>
+		</ul>
+		<ul class="nav pull-right">
+			<% if user_signed_in? %>
+				<li><%= link_to current_user.name, edit_user_registration_path %></a></li>
+				<li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %><li>
+			<% else %>
+				<li><%= link_to 'register', :registration_path %></li>
+				<li><%= link_to 'sign in', new_user_session_path %>
+			<% end %>
+		</ul>
 	</div>
 </div>
