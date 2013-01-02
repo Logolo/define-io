@@ -1,7 +1,3 @@
-// Place all the styles related to the core controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700);
 @import "bootstrap";
 
@@ -61,10 +57,10 @@ html, body {
 .product {
 	height: 20px;
 	&.even_product {
-		background: #5C7E9C;
+		background: #E7E7E7;
 	}
 	&.odd_product {
-		background: #375066;
+		background: #D2D2D2;
 	}
 }
 

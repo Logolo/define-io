@@ -12,7 +12,6 @@ $(document).ready(function() {
     </div>
     <div id="review_content">
       <%= @review.content %>
-      <%= @review.attributes %>
     </div>
     <div id="review_vote">
     <% if voted_on_review?(@review) == false %>
