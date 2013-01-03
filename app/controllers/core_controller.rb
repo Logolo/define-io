@@ -6,7 +6,7 @@ class CoreController < ApplicationController
 
   def index
     @products = Product.all()
-    gon.products = Product.where("average > 0").order("average DESC")
+    gon.products = Product.where("average > 0").order("average DESC").limit(50)
     @latest_articles = Article.all()
     @latest_products = @products.reverse[0,10]
   end

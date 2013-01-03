@@ -1,18 +1,32 @@
+<script>
+$(document).ready(function() {
+  var loadData = function(time_within) {
+    $("#products").html("");
+    _.each(gon.products, function(product) {
+      var productId = "\"product" + gon.products.indexOf(product) + "\"";
+      if (gon.products.indexOf(product) % 2 == 0) {
+        $("#products").append("<div class=\"product even_product\" id=\"product\">⬆ ⬇ " + product.name +
+          " | " + "Total Reviews: " + product.total_reviews + " | " + "Avg. Rating: " + product.average + "</div>");
+      } else {
+        $("#products").append("<div class=\"product odd_product\" id=\"product\">⬆ ⬇ " + product.name +
+          " | " + "Total Reviews: " + product.total_reviews + " | " + "Avg. Rating: " + product.average + "</div>");
+      }
+    });
+  };
+});
+</script>
+
 <div class="row">
-    <div class="span6 offset1">
-    <% @products.each do |product| %>
-      <div class="product_information">
-        <%= link_to product.name, product %> | ID: <%= product.id %><br/><%= score_badge(calculate_score(product)) %>
-        <i>Release Date:</i> <%= product.release_date %> | Total Reviews: <%= product.total_reviews %>
-        <br/>
-      </div>
-    <% end %> 
+  <ul class="nav nav-tabs">
+    <li><a href="#category" data-toggle="tab">Category</a></li>
+    <li><a href="#companies" data-toggle="tab">Companies</a></li>
+    <li><a href="#rating" data-toggle="tab">Rating</a></li>
+  </ul>
+  <div id="products">
   </div>
 </div>
 <div class="row">
-  <div class="span6 offset1">
     <% if authorized %>
       <%= link_to 'Add New Product', new_product_path %><br />
     <% end %>
-  </div>
 </div>

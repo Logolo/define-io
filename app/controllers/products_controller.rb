@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
   end
 
   def index
+    gon.products = Product.where("average > 0").order("average DESC").limit(50)
     @products = Product.order("average DESC")
     @title = "Products"
   end
