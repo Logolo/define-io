@@ -17,16 +17,17 @@ $(document).ready(function() {
 </script>
 
 <div class="row">
-  <ul class="nav nav-tabs">
-    <li><a href="#category" data-toggle="tab">Category</a></li>
-    <li><a href="#companies" data-toggle="tab">Companies</a></li>
-    <li><a href="#rating" data-toggle="tab">Rating</a></li>
-  </ul>
-  <div id="products">
+    <ul class="nav nav-tabs">
+      <li><a href="#category" data-toggle="tab">Category</a></li>
+      <li><a href="#companies" data-toggle="tab">Companies</a></li>
+      <li><a href="#rating" data-toggle="tab">Rating</a></li>
+    </ul>
+    <div id="products">
+    </div>
   </div>
-</div>
-<div class="row">
-    <% if authorized %>
-      <%= link_to 'Add New Product', new_product_path %><br />
-    <% end %>
+  <div class="row">
+      <% if authorized %>
+        <%= link_to 'Add New Product', new_product_path %><br />
+      <% end %>
+  </div>
 </div>
