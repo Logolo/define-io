@@ -1,6 +1,5 @@
 <div class="row">
   <div class="span6 offset1">
-    <%= @review.attributes %>
     <%= form_for([@product, @review]) do |r| %>
     <%= r.label :title %>
     <%= r.text_field :title %>
