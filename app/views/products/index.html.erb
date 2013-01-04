@@ -17,6 +17,7 @@ $(document).ready(function() {
 </script>
 
 <div class="row">
+  <div>
     <ul class="nav nav-tabs">
       <li><a href="#category" data-toggle="tab">Category</a></li>
       <li><a href="#companies" data-toggle="tab">Companies</a></li>
@@ -25,9 +26,9 @@ $(document).ready(function() {
     <div id="products">
     </div>
   </div>
-  <div class="row">
-      <% if authorized %>
-        <%= link_to 'Add New Product', new_product_path %><br />
-      <% end %>
+  <div>
+    <% if authorized %>
+      <%= link_to 'Add New Product', new_product_path %><br />
+    <% end %>
   </div>
 </div>
