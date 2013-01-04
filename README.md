@@ -32,8 +32,7 @@ Current Heroku testing/alpha available at: http://alpha.define.io/
 * Doing some massive changes to the layout! After this, I will aim to get some better
   JavaScript going in order to display information about various products on the main
   page as well as in other parts of the site. This includes:
-  * Product sections in alternating colors don't specifically link to the products.
-    I need to implement this. On top of that, I need to implement a function to list
-    the top-reviewed products within X number of days.
+  * Product listings now link to products. The code is a bit sloppy and I can probably
+    trim it down, but it works for now.
   * Up/down voting buttons need to be fixed.
   * Articles are lacking in terms of format.

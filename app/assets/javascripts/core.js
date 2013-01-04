@@ -4,11 +4,15 @@ $(document).ready(function() {
     _.each(gon.products, function(product) {
       var productId = "\"product" + gon.products.indexOf(product) + "\"";
       if (gon.products.indexOf(product) % 2 == 0) {
-        $("#products").append("<div class=\"product even_product\" id=\"product\">⬆ ⬇ " + product.name +
-          " | " + "Total Reviews: " + product.total_reviews + " | " + "Avg. Rating: " + product.average + "</div>");
+        $("#products").append("<div class=\"product even_product\" id=\"product\">" + 
+          "<a href=\"/products/" + product.id + "\">" + product.name + "</a>" +
+          " | " + "Total Reviews: " + product.total_reviews + " | " + "Avg. Rating: " + 
+          product.average + "</div>");
       } else {
-        $("#products").append("<div class=\"product odd_product\" id=\"product\">⬆ ⬇ " + product.name +
-          " | " + "Total Reviews: " + product.total_reviews + " | " + "Avg. Rating: " + product.average + "</div>");
+        $("#products").append("<div class=\"product odd_product\" id=\"product\">" + 
+          "<a href=\"/products/" + product.id + "\">" + product.name + "</a>" +
+          " | " + "Total Reviews: " + product.total_reviews + " | " + "Avg. Rating: " + 
+          product.average + "</div>");
       }
     });
   };
