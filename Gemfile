@@ -16,6 +16,7 @@ group :production do
   gem 'pg'
 end
 
+gem 'actionpack', '3.2.11'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'friendly_id'
