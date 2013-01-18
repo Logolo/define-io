@@ -1,3 +1,4 @@
+/*
 $(document).ready(function() {
   var loadData = function(time_within) {
     $("#products").html("");
@@ -29,3 +30,4 @@ $(document).ready(function() {
     });
   });
 });
+*/

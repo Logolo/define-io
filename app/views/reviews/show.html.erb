@@ -1,7 +1,7 @@
 <script>
 $(document).ready(function() {
-  $('.vote').click(function() {
-    $('.vote').hide();
+  $('.vote').click(this, function() {
+    $(this).hide();
   });
 });
 </script>
@@ -40,7 +40,9 @@ $(document).ready(function() {
                                                      :remote => true %></h3>
                                                      <% end %>
     <% else %>
-      You have already voted.<br />
+      <% if user_signed_in? %>
+        You have already voted.<br />
+      <% end %>
     <% end %>
     </div>
     <div id="review_score">
