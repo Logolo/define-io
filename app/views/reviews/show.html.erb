@@ -14,7 +14,7 @@ $(document).ready(function() {
       <%= @review.content %>
     </div>
     <div id="review_vote">
-    <% if voted_on_review?(@review) == false %>
+    <% if user_signed_in? && voted_on_review?(@review) == false %>
       <h3><%= link_to '⬆', vote_up_product_review_path(:review_id => @review.id), 
                                                      :class => "vote",
                                                      :id => "vote_up", 
@@ -25,7 +25,7 @@ $(document).ready(function() {
                                                      :id => "vote_down", 
                                                      :method => :put, 
                                                      :remote => true %></h3>
-    <% elsif voted_on_review?(@review) %>
+    <% elsif user_signed_in? && voted_on_review?(@review) %>
       <% if current_user.reviews_voted_on[@review.id] == "up" %>
         <h3><%= link_to '⬇', vote_down_product_review_path(:review_id => @review.id), 
                                                      :class => "vote",
