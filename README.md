@@ -27,12 +27,19 @@ opinions of the reviews its users submit.
 
 Current Heroku testing/alpha available at: http://alpha.define.io/
 
-**TODO/UPDATES (1/3/13)**
+**TODO/UPDATES (1/17/13)**
 
-* Doing some massive changes to the layout! After this, I will aim to get some better
-  JavaScript going in order to display information about various products on the main
-  page as well as in other parts of the site. This includes:
-  * Product listings now link to products. The code is a bit sloppy and I can probably
-    trim it down, but it works for now.
-  * Up/down voting buttons need to be fixed.
-  * Articles are lacking in terms of format.
+Due to the holidays and everything going on, I've neglected to do too much with the
+site in the last couple of weeks. I plan on getting back to doing so.
+
+Things which must be done:
+
+* Small layout tweaks. Nothing immediately coming to mind, but more just as I see them.
+* Write some tests.
+* Make sure code is fully documented. Some is there, but some is also missing.
+* Currently there is no weighting or automated process for updating scores. This is a
+  more complex thing I want to do, but essentially tie user reviews into the weight of
+  a review.
+* Add some more JavaScript in to make things a bit more dynamic. A bunch of little things
+  (such as showing top reviews within a number of days) doesn't work right now.
+* Add a proper admin panel.

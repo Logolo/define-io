@@ -6,4 +6,8 @@ class CoreControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get products" do
+    get :products
+    assert_response :success
+  end
 end
