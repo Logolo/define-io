@@ -13,6 +13,10 @@ class ProductsController < ApplicationController
     gon.products = Product.where("average > 0").order("average DESC").limit(50)
     @products = Product.order("average DESC")
     @title = "Products"
+    respond_to do |format|
+      format.html
+      format.json { render :json => @products }
+    end
   end
   
   def new
@@ -29,6 +33,10 @@ class ProductsController < ApplicationController
       @review = current_user.reviews.find(:conditions => ["product_id = ?", @product.id])
     else
       @review = Review.new()
+    end
+    respond_to do |format|
+      format.html
+      format.json { render :json => @product }
     end
   end
 
