@@ -33,11 +33,11 @@ class ProductsController < ApplicationController
   end
 
   protected
-    def authorized
-      if user_signed_in? && current_user.admin?
-        true
-      else
-        redirect_to :index_path
-      end
+  def authorized
+    if user_signed_in? && current_user.admin?
+      true
+    else
+      redirect_to :index_path
     end
+  end
 end

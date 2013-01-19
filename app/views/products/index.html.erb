@@ -17,18 +17,6 @@ $(document).ready(function() {
       }
     });
   };
-  loadData(7);
-
-  $("#reviews_within").each(function() {
-    $("a").click(function(clicked) {
-      if($(this).hasClass("active")) {
-        $(this).removeClass("active");
-      } else {
-        $(this).addClass("active");
-      }
-      loadData(30);
-    });
-  });
 });
 </script>
 
