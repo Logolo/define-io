@@ -36,6 +36,15 @@ class ArticlesController < ApplicationController
     @title = @article.title
   end
 
+  def update
+    @article = Article.find(params[:id])
+    if @article.update_attributes(params[:article])
+      redirect_to @article
+    else
+      redirect_to edit_article_path(@article), :flash => "Update failed"
+    end
+  end
+
   protected
   def authorized
     if user_signed_in? && current_user.admin?
