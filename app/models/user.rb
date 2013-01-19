@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :admin, :name, :email, :password, :password_confirmation, 
   				        :products_reviewed, :remember_me, :reviews_voted_on
   
+  has_many :articles, :dependent => :destroy
   has_many :reviews, :dependent => :destroy
   has_many :comments, :dependent => :destroy
   serialize :products_reviewed, Array
