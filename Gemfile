@@ -19,6 +19,7 @@ end
 
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'font-awesome-rails'
 gem 'friendly_id'
 gem 'newrelic_rpm'
 gem 'gon'
