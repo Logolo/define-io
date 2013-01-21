@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
+  fixtures :all
   #  test "the truth" do
   #    assert true, "Truth passed."
   #  end
@@ -10,8 +11,8 @@ class UserTest < ActiveSupport::TestCase
     assert !user.save
   end
 
-  test "user confirmation requires password and password confirmation" do
+  test "user does not have admin privileges upon creation" do
     user = User.new
-    assert user.admin == false, "User is admin on creation."
+    assert user.admin == false, "User has admin privileges upon creation."
   end
 end
