@@ -3,9 +3,7 @@
 one:
   product: MyString
   content: MyText
-  score: 1
 
 two:
   product: MyString
   content: MyText
-  score: 1

@@ -14,4 +14,6 @@ class User < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
   serialize :products_reviewed, Array
   serialize :reviews_voted_on, Hash
+  validates :email, :presence => true
+  validates :name, :presence => true
 end

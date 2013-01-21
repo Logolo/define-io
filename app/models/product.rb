@@ -1,6 +1,7 @@
 class Product < ActiveRecord::Base
   attr_accessible :average, :description, :name, :release_date, :rating_sum, :total_reviews
   has_many :reviews, :dependent => :destroy
+  validates :name, :presence => true
 
   # def add_new_rating
   # Argument: rating
