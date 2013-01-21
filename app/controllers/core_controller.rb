@@ -10,6 +10,10 @@ class CoreController < ApplicationController
     @latest_articles = Article.all()
     @latest_products = @products.reverse[0,10]
   end
+
+  def issues
+    @title = "Issues"
+  end
   
   def news
     @articles = Article.all()

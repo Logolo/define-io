@@ -27,16 +27,15 @@ opinions of the reviews its users submit.
 
 Current Heroku testing/alpha available at: http://alpha.define.io/
 
-**TODO/UPDATES (1/17/13)**
+**TODO/UPDATES (1/21/13)**
 
-Due to the holidays and everything going on, I've neglected to do too much with the
-site in the last couple of weeks. I plan on getting back to doing so.
+Things are (sort of) back on track!
 
-Things which must be done:
+What's being done/what must be done:
 
-* Small layout tweaks. Nothing immediately coming to mind, but more just as I see them.
-* Write some tests.
-* Make sure code is fully documented. Some is there, but some is also missing.
+* Small layout tweaks as I feel necessary. Things look fine for now.
+* Tests are being written.
+* Must add documentation to code. Some is there, but much is missing.
 * Currently there is no weighting or automated process for updating scores. This is a
   more complex thing I want to do, but essentially tie user reviews into the weight of
   a review.
