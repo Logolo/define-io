@@ -1,13 +1,7 @@
 <script>
 $(document).ready(function() {
   var loadData = function(time_within) { 
-    // Current time as called via Moment.js.
     var now = moment();
-    // Filter the products; retain the original gon.products
-    // variable and use it as a list to parse. Filter the list
-    // based on whether the product's release date (as converted)
-    // into a Moment object (otherwise it won't work, due to how
-    // date objects in JS work... sort of).
     var products = _.filter(gon.products, function(product) {
       return (moment(product.release_date) > now.subtract('days', time_within));
     });
