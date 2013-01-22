@@ -35,8 +35,7 @@ What's being done/what must be done:
 
 * Small layout tweaks as I feel necessary. Things look fine for now.
 * Tests are being written.
-* The "products within" updating dyamically on the main page almost work properly.
-  Almost! I have to resolve the jQuery function in the index file.
+* The "products within" updating dyamically on the main page should now work!
 * Must add documentation to code. Some is there, but much is missing.
 * Currently there is no weighting or automated process for updating scores. This is a
   more complex thing I want to do, but essentially tie user reviews into the weight of
