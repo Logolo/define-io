@@ -61,10 +61,10 @@ $(document).ready(function() {
 	<div class="span10 offset1" id="newest_reviews">
 		<div id="reviews_within">
 				<h3>Top Reviewed Products:</h3>
-				Products within last: <%= link_to '0', '#', :class => 'active show_products_within', :value => '0' %>
-				<%= link_to '14', '#', :class => 'show_products_within', :value => '14' %>
-				<%= link_to '30', '#', :class => 'show_products_within', :value => '30' %>
-				<%= link_to '60', '#', :class => 'show_products_within', :value => '60' %> days
+				Products within last: <%= link_to '0', '#', :class => 'active show_products_within' %>
+				<%= link_to '7', '#', :class => 'show_products_within' %>
+				<%= link_to '30', '#', :class => 'show_products_within' %>
+				<%= link_to '60', '#', :class => 'show_products_within' %> days
 		</div>
 		<%= content_tag "div", :id => "products", :data => {:products => @products} do %>
 		<% end %>
