@@ -2,9 +2,6 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   fixtures :all
-  #  test "the truth" do
-  #    assert true, "Truth passed."
-  #  end
 
   test "user cannot be created due to lacking various creation information" do
     user = User.new
