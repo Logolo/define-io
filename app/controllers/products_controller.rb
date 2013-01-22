@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @reviews = @product.reviews
+    @reviews = @product.reviews.order("votes DESC")
     gon.reviews = @reviews.order("votes DESC").limit(50)
     @title = @product.name
     if user_signed_in? && current_user.products_reviewed.include?(@product)
