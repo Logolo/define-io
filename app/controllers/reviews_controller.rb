@@ -31,13 +31,13 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    @product = Product.find(params[:id])
-    @old_rating = @review.rating
     @review = current_user.reviews.find(params[:id])
+    @product = Product.where("id = ?", @review.product_id).first
+    @old_rating = @review.rating
     
     if @review.update_attributes(params[:review])
       @product.recalculate_rating(@old_rating, @review.rating)
-      redirect_to :index_path
+      redirect_to @product
     end
   end
 

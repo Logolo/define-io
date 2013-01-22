@@ -23,6 +23,7 @@ class Product < ActiveRecord::Base
   def recalculate_rating(rating, new_rating)
     self.rating_sum -= rating
     self.rating_sum += new_rating
+    puts self.rating_sum
     self.average = rating_sum / total_reviews
     self.save()
   end

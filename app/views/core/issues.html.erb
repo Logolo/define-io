@@ -9,8 +9,11 @@
     </p>
     <ul>
       <li>
-        Showing products within a certain timeframe on the main page should
-        now work!
+        There is a small bug with regards to routing where the products part
+        of the URL path does not matter much in terms to fetching individual
+        reviews. Example: if a review with an ID of 5 belongs to a product with an ID
+        of 3, you can still access that review by going to the URL 
+        /products/2/reviews/3.
       </li>
       <li>
         Tabbing non-functional within the products page. Again, will be added
