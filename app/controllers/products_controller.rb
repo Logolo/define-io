@@ -27,10 +27,10 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @reviews = @product.reviews
-    gon.reviews = @product.reviews.order("votes DESC")
+    gon.reviews = @reviews.order("votes DESC").limit(50)
     @title = @product.name
     if user_signed_in? && current_user.products_reviewed.include?(@product)
-      @review = current_user.reviews.find(:conditions => ["product_id = ?", @product.id])
+      @review = current_user.reviews.where("product_id = ?", @product.id).first
     else
       @review = Review.new()
     end
