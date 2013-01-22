@@ -35,10 +35,11 @@ What's being done/what must be done:
 
 * Small layout tweaks as I feel necessary. Things look fine for now.
 * Tests are being written.
+* The "products within" updating dyamically on the main page almost work properly.
+  Almost! I have to resolve the jQuery function in the index file.
 * Must add documentation to code. Some is there, but much is missing.
 * Currently there is no weighting or automated process for updating scores. This is a
   more complex thing I want to do, but essentially tie user reviews into the weight of
   a review.
-* Add some more JavaScript in to make things a bit more dynamic. A bunch of little things
-  (such as showing top reviews within a number of days) doesn't work right now.
+* A lot of dynamic/AJAX stuff is missing.
 * Add a proper admin panel.
