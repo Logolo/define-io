@@ -1,1 +1,13 @@
-<%= @user.reviews_voted_on %>
+<div class="row">
+  <div class="span9">
+    <h3><%= @user.name %></h3>
+    <hr/>
+    <h4>Reviews Written</h4>
+    <% @reviews.each do |review| %>
+      <div class="review">
+        <%= link_to review.title, [review.product, review] %>
+      </div>
+    <% end %>
+    <hr/>
+  </div>
+</div>

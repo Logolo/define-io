@@ -8,7 +8,7 @@ $(document).ready(function() {
 <div class="row">
   <div class="span10" id="review_body">
     <div id="review_title">
-      <h2><%= @review.title %>, by <%= @review.user.name %></h2><b>Votes:</b> <%= @review.votes %><br /><br />
+      <h2><%= @review.title %>, by <%= link_to @review.user.name, @review.user %></h2><b>Votes:</b> <%= @review.votes %><br /><br />
     </div>
     <div id="review_content">
       <%= @review.content %>
