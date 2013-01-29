@@ -56,12 +56,16 @@ class ReviewsController < ApplicationController
       if current_user.reviews_voted_on[@review.id] == "up"
         if @review.vote_down(changed_vote = true)
           current_user.reviews_voted_on = current_user.reviews_voted_on.merge({@review.id => "down"})
-          current_user.save()
+          current_user.save 
+          @review.user.review_vote_total -= 2
+          @review.user.save
         end
       else
-        if @review.vote_down()
+        if @review.vote_down
           current_user.reviews_voted_on = current_user.reviews_voted_on.merge({@review.id => "down"})
-          current_user.save()
+          current_user.save 
+          @review.user.review_vote_total -= 1
+          @review.user.save
         end
       end
     end
@@ -82,12 +86,16 @@ class ReviewsController < ApplicationController
       if current_user.reviews_voted_on[@review.id] == "down"
         if @review.vote_up(changed_vote = true)
           current_user.reviews_voted_on = current_user.reviews_voted_on.merge({@review.id => "up"})
-          current_user.save()
+          current_user.save
+          @review.user.review_vote_total += 2
+          @review.user.save
         end
       else
-        if @review.vote_up()
+        if @review.vote_up
           current_user.reviews_voted_on = current_user.reviews_voted_on.merge({@review.id => "up"})
-          current_user.save()
+          current_user.save
+          @review.user.review_vote_total += 1
+          @review.user.save
         end
       end
     end

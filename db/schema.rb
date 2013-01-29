@@ -25,11 +25,13 @@ ActiveRecord::Schema.define(:version => 20121126052003) do
   add_index "articles", ["user_id"], :name => "index_articles_on_user_id"
 
   create_table "comments", :force => true do |t|
+    t.integer  "user_id"
     t.text     "content"
-    t.datetime "posted_on"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
   create_table "products", :force => true do |t|
     t.float    "average",       :default => 0.0
@@ -63,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20121126052003) do
 
   create_table "users", :force => true do |t|
     t.boolean  "admin",                  :default => false
+    t.integer  "review_vote_total",      :default => 0
     t.string   "name"
     t.string   "email",                  :default => "",    :null => false
     t.string   "encrypted_password",     :default => "",    :null => false
