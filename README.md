@@ -33,11 +33,10 @@ Things are (sort of) back on track!
 
 What's being done/what must be done:
 
-* Fixed an issue with the admin boolean being accessible; switched it to protected.
-* Added a review_votes_total attribute to the User model which tracks the total sum
-  of up/down votes on his or her reviews.
-* Small layout tweaks as I feel necessary. Things look fine for now.
-* Tests are being written.
+* Removed the tabs on the products page; I'll implement them later on. Not entirely
+  necessary at this very second, any way.
+* Link to each review's respective author added in a product's show view.
+* Tests are being/need to be written.
 * Must add documentation to code. Some is there, but much is missing.
 * Currently there is no weighting or automated process for updating scores. This is a
   more complex thing I want to do, but essentially tie user reviews into the weight of

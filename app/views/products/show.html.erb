@@ -8,7 +8,9 @@
     <div id="reviews">
       <% if @reviews.count > 0 %>
         <% @reviews.each do |review| %>
-        <%= link_to review.title, product_review_path(@product, review) %> | Votes: <%= review.votes %><br />
+        <%= link_to review.title, product_review_path(@product, review) %> 
+          | Written by: <%= link_to review.user.name, review.user %>
+          | Votes: <%= review.votes %><br />
         <% end %>
       <% else %>
         <p>There are currently no reviews for this product.</p>
